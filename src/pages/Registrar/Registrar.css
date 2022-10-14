@@ -1,0 +1,445 @@
+
+.loginRegistrar{
+    width: 100%;
+    height: 100%;
+    /* background-color: #193498; */
+    margin-top: -20px;
+}
+.imgregister{
+    height: 78px;
+    text-align: center;
+}
+.animation{
+    transform: translatex(-1000px);
+}
+.sectionREgistrar{
+    margin-top: -100px;
+}
+.formregistrar{
+    width: 100%;
+    height: 80vh;
+}
+.content{
+    width: 60%;
+    height: 100vh;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h2CriarConta{
+    margin: 10px 0px;
+}
+.h6loginregistrar{
+    margin: 0px 0px 15px 0px;
+    color: black;
+}
+.loginFormregister{
+    width: 420px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+    margin-top: 30px;
+    background-color: #193498;
+    /* animation-name: movimentarx; */
+    animation-name: scalimentarconfirmm;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+/* @keyframes movimentarx{
+    from{ transform: translateX(-1100px)}
+    to{ transform: translateX(0px)}
+} */
+#Valilaclass{
+    width: 30px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #193498;
+    z-index: 0;
+    padding: 0px;
+}
+.valillaTilt{
+    width: 420px;
+    height: 470px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+    margin-top: 00px;
+    background-color: wheat;
+    z-index: 99;
+}
+.inputLogin{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14pt;
+}
+.inputLogin:focus, .entrarbutton:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0px 0px 1px 0px;
+    border-bottom: red;
+}
+.entrarbutton{
+    background-color: #1597E5;
+    border-radius: 4px;
+}
+.criar{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Termoss{
+    color: #666;
+    text-decoration: none;
+    animation-name: scalimentarconfirmm;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+@keyframes scalimentarconfirmm{
+    from{ transform: scale(0.0)}
+    to{ transform: scale(1)}
+}
+.Termoss:hover{
+    color: #666;
+    text-decoration: underline;
+}
+.errRegister{
+    background-color: #fff;
+    color: red;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid red;
+    height: 35px;
+    font-size: 9pt;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.errRegister2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #FFD700;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid #FFD700;
+    height: 35px;
+    font-size: 11pt;
+    margin-top: 15px;
+}
+.errRegister3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #fff;
+    color: #7FFF00;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 11pt;
+    height: 35px;
+    border: 3px solid #7FFF00;
+}
+.errRegister4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    height: 35px;
+    background-color: #fff;
+    color: #008000;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 11pt;
+    border: 3px solid #008000;
+}
+
+@media (max-width: 637px){
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -15px;
+    }
+}
+#Valilaclass{
+    width: 30px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #193498;
+    z-index: 0;
+    padding: 0px;
+}
+
+@media (max-width: 579px){
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -25px;
+    }
+}
+
+@media (max-width: 542px){
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -40px;
+    }
+    #Valilaclass{
+        width: 30px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #193498;
+        z-index: 0;
+        padding: 0px;
+    }
+}
+@media (max-width: 492px){
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -55px;
+    }
+    #Valilaclass{
+        width: 30px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #193498;
+        z-index: 0;
+        padding: 0px;
+    }
+}
+.loginFormregister{
+    width: 350px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+    margin-top: 30px;
+    background-color: wheat;
+}
+@media (max-width: 440px){
+    #Valilaclass{
+        width: 330px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #193498;
+        z-index: 0;
+        padding: 0px;
+    }
+    .loginFormregister{
+        width: 300px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+        margin-top: 30px;
+        background-color: wheat;
+    }
+    .form{
+        width: 100%;
+        height: 80vh;
+    }
+    .valillaTilt{
+        width: 370px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+        margin-top: 0px;
+        background-color: wheat;
+        z-index: 99;
+    }
+    .loginForm{
+        width: 370px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+        margin-top: 30px;
+        background-color: wheat;
+    }
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -70px;
+    }
+}
+@media (max-width: 400px){
+    #Valilaclass{
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #193498;
+        z-index: 0;
+        padding: 0px;
+    }
+    .loginFormregister{
+        width: 280px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+        margin-top: 30px;
+        background-color: wheat;
+    }
+    .form{
+        width: 100%;
+        height: 80vh;
+    }
+    .valillaTilt{
+        width: 280px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+        margin-top: 0px;
+        background-color: wheat;
+        z-index: 99;
+    }
+    .loginForm{
+        width: 280px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
+        margin-top: 30px;
+        background-color: wheat;
+    }
+    .loginLogin{
+        width: 100%;
+        height: 100vh;
+        background-color: #193498;
+        margin: 0px;
+    }
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -85px;
+    }
+}
+@media(max-width: 390px){
+    #Valilaclass{
+        width: 30px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #193498;
+        z-index: 0;
+        padding: 0px;
+    }
+    .loginLogin{
+        width: 100%;
+        height: 100vh;
+        padding: 0px;
+        background-color: #193498;
+        margin: 0px;
+        margin-right: -40px;
+    }
+}
+@media (max-width: 330px){
+    #Valilaclass{
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #193498;
+        z-index: 0;
+        padding: 0px;
+    }
+    .logoLoginRes{
+        width: 400px;
+        height: 400px;
+        margin: -250px auto 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100px;
+    }
+}
