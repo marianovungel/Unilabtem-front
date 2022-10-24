@@ -57,7 +57,7 @@ function App() {
           <Route path="/visto" element={<Visto />} exact />
           <Route path="/intercampi" element={<Intercampi />} exact />
           <Route path="/registrar" element={<Registrar />} exact />
-          <Route path="/termos-politicas" element={<Termos />} exact />
+          <Route path="/registrar/termos-politicas" element={<Termos />} exact />
         </Routes>
       </Router>
   );
