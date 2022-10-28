@@ -25,6 +25,7 @@ import NewSobre from './pages/Sobre/NewSobre';
 import Visto from './pages/Visto/Visto';
 import Intercampi from './pages/Intercampi/Intercampi';
 import Termos from './pages/Termos/Termos';
+import ConfirmEmailPage from './pages/ConfirmEmailPage/ConfirmEmailPage';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
       <Router>
         <Routes> 
           <Route path="/" element={ user ? <Vida /> : <Login />} exact />
+          <Route path="/conf/:id" element={ <ConfirmEmailPage /> } exact />
           <Route path="/venda" element={ user ? <Venda /> : <Login />} exact />
           <Route path="/doacao" element={ user ? <Desapego/> : <Login />} exact />
           {/* esta rota de aluguel é inacessível */}

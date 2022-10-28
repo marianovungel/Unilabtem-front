@@ -7,6 +7,11 @@ import Swal from 'sweetalert2'
 
 export default function Registrar() {
 
+    function aleCod(max, min){
+        return Math.floor(Math.random()*(max - min) + min)
+    }
+
+    const [newCod, setNewCod] = useState(aleCod(100000, 1000000))
     const [username, setUsername] = useState("")
     const [whatsapp, setWhatsapp] = useState("")
     const [email, setEmail] = useState("")
@@ -19,14 +24,17 @@ export default function Registrar() {
     const [confirmPassword, setConfirmPassword] = useState("")
     const [ale, setAle] = useState(false)
     const [aleEmail, setAleEmail] = useState(false)
+    const [celular, setCelular] = useState(false)
     const [girar, setGirar] = useState(false)
     var checkValid = false;
     var checkValidEmail = false;
+    var checkValidCelular = false;
 
     useEffect(()=>{
         setAle(false)
         setAleEmail(false)
         setGirar(false)
+        setNewCod(aleCod(100000, 1000000));
     }, [])
 
     const fastConfirmTermo = async (e)=>{
@@ -83,6 +91,23 @@ export default function Registrar() {
             setAleEmail(checkValidEmail)
         }
     }
+    const chackZap = async (e)=>{
+        setCreden(false)
+        checkValidCelular = false;
+        try{
+            const resultados = await api.post("/auth/router/numbersearch", {
+                whatsapp: whatsapp,
+            })
+            console.log(resultados.data)
+            if(resultados.data){
+                checkValidCelular = true;
+            }
+            setCelular(checkValidCelular)
+        }catch(err){
+            checkValidCelular = true;
+            setCelular(checkValidCelular)
+        }
+    }
 
     function validarSenhaForca(){
         setCreden(false)
@@ -114,27 +139,51 @@ export default function Registrar() {
         setCreden(false)
         setGirar(true)
         if(classificacao==="Forte" || classificacao==="Excelente"){
-            if(confirmPassword===password){
+            if(confirmPassword===password && celular === false){
                 if(ale === false || aleEmail === false){
                     try{
-                        await api.post("/auth/router/register", {
-                            username: username,
-                            email: email,
-                            whatsapp: whatsapp,
-                            password: password,
-                            profilePic: "74d5d28e4db58837d16d30eb57d8e8e6"
-                        })
+                        // await api.post("/auth/router/register", {
+                        //     username: username,
+                        //     email: email,
+                        //     whatsapp: whatsapp,
+                        //     password: password,
+                        //     profilePic: "74d5d28e4db58837d16d30eb57d8e8e6"
+                        // })
                         
-                          Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Usuário criado com sucesso!',
-                            showConfirmButton: false,
-                            timer: 5000,
-                            timerProgressBar: true,
+
+                        //   Swal.fire({
+                        //     position: 'center',
+                        //     icon: 'success',
+                        //     title: 'Usuário criado com sucesso!',
+                        //     showConfirmButton: false,
+                        //     timer: 5000,
+                        //     timerProgressBar: true,
+                        //   })
+
+                                
+                        await api.post("/auth/router/sendemailtoconfirm", {
+                            to: email,
+                            username: username,
+                            whatsapp: whatsapp,
+                            codigo: newCod,
+                            password: password,
+                            from:"unilabtem@gmail.com",
+                            
+                        })
+
+                        setGirar(false)
+                        Swal.fire({
+                            title: 'Foi enviado uma mensagem de confirmação no seu email!',
+                            showClass: {
+                              popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                              popup: 'animate__animated animate__fadeOutUp'
+                            }
                           })
-                          setGirar(false)
-                          window.location.replace("/login");
+
+
+                        //   window.location.replace("/login");
                     }catch(err){
                         setCreden(true)
                     }
@@ -163,10 +212,10 @@ export default function Registrar() {
                         <div className='valillaTilt'>
                             
                             <h2 className='h2CriarConta'>Criar conta</h2>
-                            <input className='inputLogin' type='text' placeholder='  User' onChange={e=>setUsername(e.target.value)} onBlur={chackUser} />
-                            <input className='inputLogin' type='email' placeholder='  your email' onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} />
-                            <input className='inputLogin' type='Number' placeholder='  Celular' minLength='9' onChange={e=>setWhatsapp(e.target.value)} />
-                            <input className='inputLogin' onKeyUp={validarSenhaForca} type='password' placeholder='  Password' minLength='4' onChange={e=>setPassword(e.target.value)} />
+                            <input className='inputLogin' type='text' placeholder='  Usuário...' onChange={e=>setUsername(e.target.value)} onBlur={chackUser} />
+                            <input className='inputLogin' type='email' placeholder='   Email...' onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} />
+                            <input className='inputLogin' type='Number' placeholder='  (85) 99139-2625' minLength='9' onChange={e=>setWhatsapp(e.target.value)} onBlur={chackZap} />
+                            <input className='inputLogin' onKeyUp={validarSenhaForca} type='Senha' placeholder='  Password' minLength='4' onChange={e=>setPassword(e.target.value)} />
                             <input className='inputLogin' type='password' placeholder='  Confirme a Senha...' onChange={e=>setConfirmPassword(e.target.value)} />
                             {girar ? (
                                 <button className='inputLogin entrarbutton'><i class="fa-solid fa-spinner girar"></i></button>
@@ -186,6 +235,7 @@ export default function Registrar() {
                     {classificacao==="Excelente" && <h3 className='errRegister4'>Senha: {classificacao}</h3>}
                     {ale && <h3 className='errRegister'>Já existe usuário registrado com este nome!</h3>}
                     {aleEmail && <h3 className='errRegister'>Já existe usuário registrado com este email!</h3>}
+                    {celular && <h3 className='errRegister'>Já existe usuário registrado com este celular!</h3>}
                     {creden && <h3 className='errRegister'>Credências inválidas!</h3>}
                     <div className='criar'>
                         <div className='Termoss'><Link to='termos-politicas'>Termos e Políticas de Uso</Link></div>

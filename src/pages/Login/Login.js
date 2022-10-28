@@ -28,6 +28,7 @@ export default function Login() {
                 password: passwordRef.current.value,
             })
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
+            window.location.replace("/");
         }catch(err){
             dispatch({ type: "LOGIN_FAILURE"})
             setFalsesenha(true)
@@ -61,9 +62,9 @@ export default function Login() {
                     <form className='loginForm' onSubmit={handleSubmit}>
                             <div className='valillaTilt'>
                                 <h2 id='h2Margin'>LOGIN</h2>
-                                <input className='inputLogin' type='text' placeholder=' User' ref={userRef} minLength="2" onBlur={chackUser} required />
-                                <input className='inputLogin' type='password' placeholder=' Password' minLength='4' ref={passwordRef} required/>
-                                <button className='inputLogin entrarbutton' type='submit' disabled={isFetching}>Sing In</button>
+                                <input className='inputLogin' type='text' placeholder=' Usuário...' ref={userRef} minLength="2" onBlur={chackUser} required />
+                                <input className='inputLogin' type='password' placeholder=' Senha...' minLength='4' ref={passwordRef} required/>
+                                <button className='inputLogin entrarbutton' type='submit' disabled={isFetching}>Entrar...</button>
                                 <div className='registrarAndFogat'>
                                     <Link to='/registrar'><i className='TermosCreate' id='nawCreate'>Criar conta</i></Link>
                                     <Link to='/sendemail' className='fogatPass'>
