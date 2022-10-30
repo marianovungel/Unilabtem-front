@@ -175,6 +175,7 @@ export default function Registrar() {
                         setGirar(false)
                         Swal.fire({
                             title: 'Foi enviado uma mensagem de confirmação no seu email!',
+                            timer: 15000,
                             showClass: {
                               popup: 'animate__animated animate__fadeInDown'
                             },
@@ -184,7 +185,7 @@ export default function Registrar() {
                           })
 
 
-                        //   window.location.replace("/login");
+                        window.location.replace("/");
                     }catch(err){
                         setCreden(true)
                     }
