@@ -7,6 +7,7 @@ import { Link, useLocation} from 'react-router-dom';
 import api from '../../services/api'
 import { Context } from '../../Context/Context';
 import Swal from 'sweetalert2';
+const URLImg = "https://festupload.s3.amazonaws.com/";
 // import { Link } from 'react-router-dom';
 
 
@@ -37,13 +38,18 @@ export default function SingleVenda() {
   }, [path])
 
 const {user} = useContext(Context);
-const URLImg = "https://festupload.s3.amazonaws.com/";
+//número
+var fone = post.userwhatsapp.replace(/-/g, '');
+fone = fone.replace(/ /g, '');
+fone = fone.replace(")", '');
+fone = fone.replace("(", '');
+console.log("fone = " + fone);
 const whatsappSend = () =>{
   const messageZap=`Olá ${post.username}. Gostaria de saber se o produto ${post.title} 
   que divulgou na plataforma UnilabTem no preço de R$${post.preco} 
   se ainda está a venda?`;
 
-  window.open(`http://wa.me/+55${post.userwhatsapp}?text=${messageZap}`)
+  window.open(`http://wa.me/+55${fone}?text=${messageZap}`)
 }
 // const Zoom = () =>{
 //   window.open(`${URLImg}${post.photo}`)
