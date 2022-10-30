@@ -98,6 +98,7 @@ export default function Registrar() {
             const resultados = await api.post("/auth/router/numbersearch", {
                 whatsapp: whatsapp,
             })
+            console.log(whatsapp)
             console.log(resultados.data)
             if(resultados.data){
                 checkValidCelular = true;
@@ -215,7 +216,7 @@ export default function Registrar() {
                             <input className='inputLogin' type='text' placeholder='  Usuário...' onChange={e=>setUsername(e.target.value)} onBlur={chackUser} />
                             <input className='inputLogin' type='email' placeholder='   Email...' onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} />
                             <input className='inputLogin' type='Number' placeholder='  (85) 99139-2625' minLength='9' onChange={e=>setWhatsapp(e.target.value)} onBlur={chackZap} />
-                            <input className='inputLogin' onKeyUp={validarSenhaForca} type='Senha' placeholder='  Password' minLength='4' onChange={e=>setPassword(e.target.value)} />
+                            <input className='inputLogin' onKeyUp={validarSenhaForca} type='password' placeholder='  Senha...' minLength='4' onChange={e=>setPassword(e.target.value)} />
                             <input className='inputLogin' type='password' placeholder='  Confirme a Senha...' onChange={e=>setConfirmPassword(e.target.value)} />
                             {girar ? (
                                 <button className='inputLogin entrarbutton'><i class="fa-solid fa-spinner girar"></i></button>
