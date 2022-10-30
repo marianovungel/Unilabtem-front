@@ -38,18 +38,19 @@ export default function SingleVenda() {
   }, [path])
 
 const {user} = useContext(Context);
-//número
-var fone = post.userwhatsapp.replace(/-/g, '');
-fone = fone.replace(/ /g, '');
-fone = fone.replace(")", '');
-fone = fone.replace("(", '');
-console.log("fone = " + fone);
+
 const whatsappSend = () =>{
   const messageZap=`Olá ${post.username}. Gostaria de saber se o produto ${post.title} 
   que divulgou na plataforma UnilabTem no preço de R$${post.preco} 
-  se ainda está a venda?`;
+  se ainda está a venda? 
+  https://unilabtem.com.br/post/${path}`;
 
-  window.open(`http://wa.me/+55${fone}?text=${messageZap}`)
+  var nu = post.userwhatsapp.replace(/-/g, '');
+  var nua = nu.replace(/ /g, '');
+  var nub = nua.replace(")", '');
+  var nuc = nub.replace("(", '');
+  var nud = parseInt(nuc);
+  window.open(`http://wa.me/+55${nud}?text=${messageZap}`)
 }
 // const Zoom = () =>{
 //   window.open(`${URLImg}${post.photo}`)

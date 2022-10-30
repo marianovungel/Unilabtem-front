@@ -42,9 +42,15 @@ const whatsappSend = () =>{
   const messageZap=`Olá ${post.username}. Gostaria de saber se A casa em compartilhamento  
   que divulgou na plataforma UnilabTem
   se ainda precisa de pessoa para compartilhar?
-  https://incredible-trifle-5834a1.netlify.app/habitacao/compartilhar/${path}`;
+  https://unilabtem.com.br/habitacao/compartilhar/${path}`;
 
-  window.open(`http://wa.me/+55${post.userwhatsapp}?text=${messageZap}`)
+  var nu = post.userwhatsapp.replace(/-/g, '');
+  var nua = nu.replace(/ /g, '');
+  var nub = nua.replace(")", '');
+  var nuc = nub.replace("(", '');
+  var nud = parseInt(nuc);
+
+  window.open(`http://wa.me/+55${nud}?text=${messageZap}`)
 }
 const EditTrue = () =>{
   setEditar(true)

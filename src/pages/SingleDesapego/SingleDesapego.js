@@ -36,9 +36,16 @@ const URLImg = "https://festupload.s3.amazonaws.com/";
 const whatsappSend = () =>{
   const messageZap=`Olá ${post.username}. Gostaria de saber se o produto ${post.title} 
   que divulgou na plataforma UnilabTem para doação 
-  se ainda está a venda?`;
+  se ainda está a venda? 
+  https://unilabtem.com.br/doacao/${path}`;
 
-  window.open(`http://wa.me/+55${post.userwhatsapp}?text=${messageZap}`)
+  var nu = post.userwhatsapp.replace(/-/g, '');
+  var nua = nu.replace(/ /g, '');
+  var nub = nua.replace(")", '');
+  var nuc = nub.replace("(", '');
+  var nud = parseInt(nuc);
+
+  window.open(`http://wa.me/+55${nud}?text=${messageZap}`)
 }
 const EditTrue = () =>{
   setEditar(true)

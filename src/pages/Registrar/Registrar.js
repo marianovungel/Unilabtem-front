@@ -215,7 +215,7 @@ export default function Registrar() {
                             <h2 className='h2CriarConta'>Criar conta</h2>
                             <input className='inputLogin' type='text' placeholder='  Usuário...' onChange={e=>setUsername(e.target.value)} onBlur={chackUser} />
                             <input className='inputLogin' type='email' placeholder='   Email...' onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} />
-                            <input className='inputLogin' type='Number' placeholder='  (xx) xxxx-xxxx' minLength='10' onChange={e=>setWhatsapp(e.target.value)} onBlur={chackZap} />
+                            <input className='inputLogin' type='tel' placeholder='  (xx) xxxx-xxxx' minLength='10' onChange={e=>setWhatsapp(e.target.value)} onBlur={chackZap} />
                             <input className='inputLogin' onKeyUp={validarSenhaForca} type='password' placeholder='  Senha...' minLength='4' onChange={e=>setPassword(e.target.value)} />
                             <input className='inputLogin' type='password' placeholder='  Confirme a Senha...' onChange={e=>setConfirmPassword(e.target.value)} />
                             {girar ? (
