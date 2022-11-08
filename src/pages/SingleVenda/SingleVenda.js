@@ -50,7 +50,7 @@ const whatsappSend = () =>{
   var nub = nua.replace(")", '');
   var nuc = nub.replace("(", '');
   var nud = parseInt(nuc);
-  window.open(`http://wa.me/+55${nud}?text=${messageZap}`)
+  window.open(`http://wa.me/${nud}?text=${messageZap}`)
 }
 // const Zoom = () =>{
 //   window.open(`${URLImg}${post.photo}`)

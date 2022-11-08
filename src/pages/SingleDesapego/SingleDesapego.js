@@ -45,7 +45,7 @@ const whatsappSend = () =>{
   var nuc = nub.replace("(", '');
   var nud = parseInt(nuc);
 
-  window.open(`http://wa.me/+55${nud}?text=${messageZap}`)
+  window.open(`http://wa.me/${nud}?text=${messageZap}`)
 }
 const EditTrue = () =>{
   setEditar(true)

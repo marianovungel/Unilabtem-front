@@ -1,167 +1,117 @@
-.loginLogin{
-    margin-top: 0px;
+.fullContentLogin{
     width: 100%;
-    height: 100vh;
-    /* background-color: #193498; */
-    margin: 0px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
 }
-.checkuser{
-    color: red;
+
+
+/* ===========Imagem========= */
+.logoAndText{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 450px;
+}
+#colorLink{
+    color: black;
+}
+#colorLink:hover{
+    color: blue;
+    transition: 0.3s;
+}
+#colorLinkSenha{
+    color: #666;
     font-size: 14px;
+}
+#colorLinkSenha:hover{
+    color: blue;
+    transition: 0.3s;
+}
+
+.imagemLogooi{
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+}
+.paragrafoLogo{
+    font-size: 18pt;
     text-align: center;
-    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -190px;
+    text-size-adjust: 100pt;
+    width: 78%;
+}
+.paragrafoLogo1{
+    font-size: 18pt;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -10px;
+}
+.criarNovaContaButton{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.criarConta{
+    font-weight: 900;
+    font-size: 14pt;
+    font-family: 'Roboto', sans-serif;
+
 }
 
-.form{
-    width: 100%;
-    height: 80vh;
+/* ===========form========= */
+.sectionLogin{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
 }
+.LoginH1{
+    width: 70%;
+    margin-bottom: 25px;
+    margin-top: -40px;
+    font-size: 40pt;
+    font-family: 'Roboto', sans-serif;
+}
+.formLogin{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.fastInput{
+    height: 45px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    font-size: 14pt;
+    font-family: 'Roboto', sans-serif;
 
-.registrarAndFogat{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
 }
-.fogatPass{
-    width: 150px;
-    height: 50px;
-    color: #fff;
-    font-size: 12px;
-    background-color: #000;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.content{
-    width: 60%;
-    height: 100vh;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.logoImg{
-    width: 160px;
-    height: 160px;
-    margin-top: -80px;
-}
-.logoLogin{
-    background-color: #fff;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#Valilaclass{
-    width: 420px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: wheat;
-    z-index: 0;
-    padding: 0px;
-}
-.logoImgLoginsystem{
-    width: 100px;
-    height: 60px;
-}
-.valillaTilt{
-    width: 420px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-    margin-top: 0px;
-    background-color: wheat;
-    z-index: 99;
-}
-.loginForm{
-    width: 420px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-    margin-top: 30px;
-    background-color: wheat;
-    animation-name: movform;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-}
-@keyframes movform{
-    from{transform: translateY(700px)}
-    to{transform: translateY(0px)}
-}
-.logoImgRes{
-    width: 360px;
-    height: 360px;
-    margin-bottom: -285px;
-}
-.logoLoginRes{
-    width: 400px;
-    height: 400px;
-    margin: -250px auto 0px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation-name: movformy;
-    animation-duration: 3s;
-    animation-fill-mode: both;
-}
-@keyframes movformy{
-    from{transform: translateY(-700px)}
-    to{transform: translateY(0px)}
-}
-.inputLogin{
-    width: 80%;
-    height: 40px;
-    margin-bottom: 20px;
-    border-radius: 30px;
+.in{
     border: none;
+    border-bottom: 1.8px solid #666;
+    border-radius: 0px;
+    padding-left: 5px;
 }
-.entrarbutton{
-    background-color: #1597E5;
+.buttonEntrarLogin{
+    border: none;
+    background-color: rgb(14, 14, 200);
+    color: #fff;
 }
-.entrarbutton:disabled{
-    background-color: #8acbf3;
-}
-.criar{
-    margin-top: 30px;
+.checkuserLogin{
+    width: 100%;
+    height: 37px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-.Termoss{
-    color: #666;
-    text-decoration: none;
-}
-.Termoss:hover{
-    color: #666;
-    text-decoration: underline;
-}
-
-#nawCreate{
-    color: #666;
-    transform: scale(0.95);
-}
-#nawCreate:hover{
-    color: #000;
-    transform: scale(1);
-}
-#h2Margin{
-    margin-bottom: 20px;
-    font-family: sans-serif;
+    justify-content: center;
+    border: 1.5px solid red;
+    background-color: rgba(255, 0, 0, 0.435);
+    color: #fff;
+    margin-bottom: 10px;
 }

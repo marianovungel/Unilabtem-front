@@ -1,445 +1,179 @@
 
-.loginRegistrar{
+.fullContentRegister2{
     width: 100%;
     height: 100%;
-    /* background-color: #193498; */
-    margin-top: -20px;
-}
-.imgregister{
-    height: 78px;
-    text-align: center;
-}
-.animation{
-    transform: translatex(-1000px);
-}
-.sectionREgistrar{
-    margin-top: -100px;
-}
-.formregistrar{
-    width: 100%;
-    height: 80vh;
-}
-.content{
-    width: 60%;
-    height: 100vh;
-    margin: 20px auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-.h2CriarConta{
-    margin: 10px 0px;
-}
-.h6loginregistrar{
-    margin: 0px 0px 15px 0px;
-    color: black;
-}
-.loginFormregister{
-    width: 420px;
-    height: 550px;
+/* ===========Imagem========= */
+.logoAndText{
+    flex: 6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-    margin-top: 30px;
-    background-color: #193498;
-    /* animation-name: movimentarx; */
-    animation-name: scalimentarconfirmm;
-    animation-duration: 2s;
-    animation-fill-mode: both;
+    position: relative;
+    height: 450px;
 }
-/* @keyframes movimentarx{
-    from{ transform: translateX(-1100px)}
-    to{ transform: translateX(0px)}
-} */
-#Valilaclass{
-    width: 30px;
-    height: 300px;
+.boo{
+    margin-bottom: 170px;
+}
+.imagemLogooi{
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+}
+.paragrafoLogo{
+    font-size: 18pt;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -200px;
+    text-size-adjust: 100pt;
+    width: 78%;
+}
+.paragrafoLogo1{
+    font-size: 18pt;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+.criarNovaContaButton{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.criarConta{
+    font-weight: 700;
+    font-size: 14pt;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+/* ===========form========= */
+.sectionRegisterNew{
+    flex: 6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #193498;
-    z-index: 0;
-    padding: 0px;
+    position: relative;
+    height: 100%;
+    margin-top: 80px;
 }
-.valillaTilt{
-    width: 420px;
-    height: 470px;
+.LoginH1{
+    width: 70%;
+    margin-bottom: 25px;
+    font-size: 40pt;
+    font-family: 'Roboto', sans-serif;
+}
+.formRegister{
+    width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-    margin-top: 00px;
-    background-color: wheat;
-    z-index: 99;
 }
-.inputLogin{
-    width: 80%;
-    height: 40px;
-    margin-bottom: 20px;
-    border-radius: 30px;
+.fastInput{
+    height: 45px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    font-size: 14pt;
+    font-family: 'Roboto', sans-serif;
+
+}
+.in{
     border: none;
-    border-radius: 4px;
+    border-bottom: 1.8px solid #666;
+    border-radius: 0px;
     padding-left: 5px;
-    padding-right: 5px;
+}
+.buttonEntrarLogin{
+    border: none;
+    background-color: rgb(14, 14, 200);
+    color: #fff;
+    cursor: pointer;
+}
+.bboRegister{
+    width: 70%;
+    margin-bottom: 25px;
+    font-size: 30pt;
+    font-family: 'Roboto', sans-serif;
+}
+.criarNovaContaButtonTermos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14pt;
+    font-weight: 600;
+}
+.criarNovaContaButtonTermos:hover{
+    color: blue;
+    transition: 0.3s;
+}
+.checkuserRegisterAlert{
+    width: 100%;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid red;
+    background-color: rgba(255, 0, 0, 0.435);
+    color: #fff;
+    margin-bottom: 10px;
     font-size: 14pt;
 }
-.inputLogin:focus, .entrarbutton:focus{
-    box-shadow: 0 0 0 0;
-    outline: 0px 0px 1px 0px;
-    border-bottom: red;
-}
-.entrarbutton{
-    background-color: #1597E5;
-    border-radius: 4px;
-}
-.criar{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.Termoss{
-    color: #666;
-    text-decoration: none;
-    animation-name: scalimentarconfirmm;
-    animation-duration: 2s;
-    animation-fill-mode: both;
-}
-@keyframes scalimentarconfirmm{
-    from{ transform: scale(0.0)}
-    to{ transform: scale(1)}
-}
-.Termoss:hover{
-    color: #666;
-    text-decoration: underline;
-}
-.errRegister{
-    background-color: #fff;
-    color: red;
-    text-align: center;
-    border-radius: 10px;
-    border: 3px solid red;
-    height: 35px;
-    font-size: 9pt;
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .errRegister2{
+    width: 100%;
+    height: 37px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #fff;
-    color: #FFD700;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    border: 3px solid #FFD700;
-    height: 35px;
-    font-size: 11pt;
-    margin-top: 15px;
+    justify-content: center;
+    border: 1.5px solid #FFD700;
+    background-color: #ffd90075;
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 14pt;
 }
 .errRegister3{
+    width: 100%;
+    height: 37px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 15px;
-    background-color: #fff;
-    color: #7FFF00;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 11pt;
-    height: 35px;
-    border: 3px solid #7FFF00;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14pt;
+    border: 1.5px solid #7FFF00;
+    background-color: #80ff005a;
 }
 .errRegister4{
+    width: 100%;
+    height: 37px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 15px;
-    height: 35px;
-    background-color: #fff;
-    color: #008000;
-    text-align: center;
-    border-radius: 10px;
-    font-size: 11pt;
-    border: 3px solid #008000;
+    justify-content: center;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 14pt;
+    background-color: #0080005f;
+    border: 1.5px solid #008000;
 }
-
-@media (max-width: 637px){
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -15px;
-    }
+.politicas{
+    color: #666;
+    font-size: 13pt;
 }
-#Valilaclass{
-    width: 30px;
-    height: 200px;
+.celularClassMundo{
+    height: 45px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    font-size: 14pt;
+    font-family: 'Roboto', sans-serif;
+    object-fit: cover;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #193498;
-    z-index: 0;
-    padding: 0px;
 }
-
-@media (max-width: 579px){
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -25px;
-    }
-}
-
-@media (max-width: 542px){
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -40px;
-    }
-    #Valilaclass{
-        width: 30px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #193498;
-        z-index: 0;
-        padding: 0px;
-    }
-}
-@media (max-width: 492px){
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -55px;
-    }
-    #Valilaclass{
-        width: 30px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #193498;
-        z-index: 0;
-        padding: 0px;
-    }
-}
-.loginFormregister{
-    width: 350px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-    margin-top: 30px;
-    background-color: wheat;
-}
-@media (max-width: 440px){
-    #Valilaclass{
-        width: 330px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #F6F3F3;
-        z-index: 0;
-        padding: 0px;
-    }
-    .loginFormregister{
-        width: 300px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-        margin-top: 30px;
-        background-color: wheat;
-    }
-    .form{
-        width: 100%;
-        height: 80vh;
-    }
-    .valillaTilt{
-        width: 370px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-        margin-top: 0px;
-        background-color: wheat;
-        z-index: 99;
-    }
-    .loginForm{
-        width: 370px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-        margin-top: 30px;
-        background-color: wheat;
-    }
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -70px;
-    }
-}
-@media (max-width: 400px){
-    #Valilaclass{
-        width: 300px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #F6F3F3;
-        z-index: 0;
-        padding: 0px;
-    }
-    .loginFormregister{
-        width: 350px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-        margin-top: 30px;
-        background-color: wheat;
-    }
-    .form{
-        width: 100%;
-        height: 80vh;
-    }
-    .valillaTilt{
-        width: 280px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-        margin-top: 0px;
-        background-color: wheat;
-        z-index: 99;
-    }
-    .loginForm{
-        width: 280px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-        box-shadow: rgba(53, 49, 99, 0.5) solid 1px;
-        margin-top: 30px;
-        background-color: wheat;
-    }
-    .loginLogin{
-        width: 100%;
-        height: 100vh;
-        background-color: #F6F3F3;
-        margin: 0px;
-    }
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -85px;
-    }
-}
-@media(max-width: 390px){
-    #Valilaclass{
-        width: 30px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #F6F3F3;
-        z-index: 0;
-        padding: 0px;
-    }
-    .loginLogin{
-        width: 100%;
-        height: 100vh;
-        padding: 0px;
-        background-color: #F6F3F3;
-        margin: 0px;
-        margin-right: -40px;
-    }
-}
-@media (max-width: 330px){
-    #Valilaclass{
-        width: 300px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #F6F3F3;
-        z-index: 0;
-        padding: 0px;
-    }
-    .logoLoginRes{
-        width: 400px;
-        height: 400px;
-        margin: -250px auto 0px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: -100px;
-    }
+.telMundo{
+    width: 100%;
+    height: 45px;
+    border: none;
+    
 }

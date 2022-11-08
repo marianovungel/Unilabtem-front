@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import api from '../../services/api.js'
 import Swal from 'sweetalert2'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 export default function Registrar() {
 
@@ -39,24 +41,31 @@ export default function Registrar() {
 
     const fastConfirmTermo = async (e)=>{
         e.preventDefault();
-        const { value: accept } = await Swal.fire({
-          title: 'Termos e Políticas de Uso',
-          input: 'checkbox',
-          inputValue: 1,
-          inputPlaceholder:
-            'Selecione a caixa para criar usuário!',
-          confirmButtonText:
-            'Continue <i class="fa fa-arrow-right"></i>',
-          inputValidator: (result) => {
-            return !result && 'É necessário selecionar para proceguir!'
-            
-          }
-        })
-        
-        if (accept) {
-          // Swal.fire('You agreed with T&C :)')
-          handleSubmit()
+        if(classificacao==="Forte" || classificacao==="Excelente"){
+            if(confirmPassword===password && celular === false){
+                if(ale === false || aleEmail === false){
+                    const { value: accept } = await Swal.fire({
+                    title: 'Termos e Políticas de Uso',
+                    input: 'checkbox',
+                    inputValue: 1,
+                    inputPlaceholder:
+                        'Selecione a caixa para criar usuário!',
+                    confirmButtonText:
+                        'Continue <i class="fa fa-arrow-right"></i>',
+                    inputValidator: (result) => {
+                        return !result && 'É necessário selecionar para proceguir!'
+                        
+                    }
+                    })
+                    
+                    if (accept) {
+                    // Swal.fire('You agreed with T&C :)')
+                    handleSubmit()
+                    }
+                }
+            }
         }
+        ////////////////////////////////
       }
 
     const chackUser = async (e)=>{
@@ -136,6 +145,14 @@ export default function Registrar() {
         }
     }
 
+
+    const CheckSenhaIqual = ()=>{
+        if(confirmPassword!==password){
+            seterror(true)
+        }else{
+            seterror(false)
+        }
+    }
     const handleSubmit = async ()=>{
         setCreden(false)
         setGirar(true)
@@ -143,24 +160,7 @@ export default function Registrar() {
             if(confirmPassword===password && celular === false){
                 if(ale === false || aleEmail === false){
                     try{
-                        // await api.post("/auth/router/register", {
-                        //     username: username,
-                        //     email: email,
-                        //     whatsapp: whatsapp,
-                        //     password: password,
-                        //     profilePic: "74d5d28e4db58837d16d30eb57d8e8e6"
-                        // })
-                        
-
-                        //   Swal.fire({
-                        //     position: 'center',
-                        //     icon: 'success',
-                        //     title: 'Usuário criado com sucesso!',
-                        //     showConfirmButton: false,
-                        //     timer: 5000,
-                        //     timerProgressBar: true,
-                        //   })
-
+                       
                                 
                         await api.post("/auth/router/sendemailtoconfirm", {
                             to: email,
@@ -199,52 +199,49 @@ export default function Registrar() {
             setErr(true)
         }
     }  
+    
   return (
-    <div className="loginRegistrar">
-        <div className='content'>
-            <div className='logoLoginRes'>
-            </div>
-
-            <div className='sectionREgistrar'>
-                
-                <div className='formregistrar'>
-
-                    <form className='loginFormregister animation' onSubmit={fastConfirmTermo}>
-                    
-                        <div className='valillaTilt'>
-                            
-                            <h2 className='h2CriarConta'>Criar conta</h2>
-                            <input className='inputLogin' type='text' placeholder='  Usuário...' onChange={e=>setUsername(e.target.value)} onBlur={chackUser} />
-                            <input className='inputLogin' type='email' placeholder='   Email...' onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} />
-                            <input className='inputLogin' type='tel' placeholder='  (xx) xxxxx-xxxx' minLength='10' onChange={e=>setWhatsapp(e.target.value)} onBlur={chackZap} />
-                            <input className='inputLogin' onKeyUp={validarSenhaForca} type='password' placeholder='  Senha...' minLength='4' onChange={e=>setPassword(e.target.value)} />
-                            <input className='inputLogin' type='password' placeholder='  Confirme a Senha...' onChange={e=>setConfirmPassword(e.target.value)} />
-                            {girar ? (
-                                <button className='inputLogin entrarbutton'><i class="fa-solid fa-spinner girar"></i></button>
-                            ):(
-                                <button className='inputLogin entrarbutton' type='submit'>Cadastrar-se</button>
-                            )}
-                            <h5 className='h6loginregistrar'><Link to='/' className='h6loginregistrar'>Login</Link></h5>
-                            
-                        </div>
-                    </form>
-                    
-                    {error && <h3 className='errRegister'>Confirme Corretamente a sua Senha!</h3>}
-                    {err && <h3 className='errRegister'>Só é possível registrar com senha Forte ou Excelente</h3>}
-                    {classificacao==="Fraca" && <h3 className='errRegister'>Senha: {classificacao}</h3>}
-                    {classificacao==="Média" && <h3 className='errRegister2'>Senha: {classificacao}</h3>}
-                    {classificacao==="Forte" && <h3 className='errRegister3'>Senha: {classificacao}</h3>}
-                    {classificacao==="Excelente" && <h3 className='errRegister4'>Senha: {classificacao}</h3>}
-                    {ale && <h3 className='errRegister'>Já existe usuário registrado com este nome!</h3>}
-                    {aleEmail && <h3 className='errRegister'>Já existe usuário registrado com este email!</h3>}
-                    {celular && <h3 className='errRegister'>Já existe usuário registrado com este celular!</h3>}
-                    {creden && <h3 className='errRegister'>Credências inválidas!</h3>}
-                    <div className='criar'>
-                        <div className='Termoss'><Link to='termos-politicas'>Termos e Políticas de Uso</Link></div>
-                    </div>
+    <div className="fullContentRegister2">
+        <div className="logoAndText boo">
+            <img src="./image/new1.png" alt="" className="imagemLogooi" />
+            <p className="paragrafoLogo">
+                Vem juntar-se à comunidade Unilabtem
+                e terá acesso a produtos, e oportunidades
+                 que são divulgados aqui.
+            </p>
+            <p className="paragrafoLogo1">Tudo mais perto e Tudo mais fácil!</p>
+            <p className="paragrafoLogo1">UNILABTEM, Tem de Tudo!</p>
+        </div>
+        <div className="sectionRegisterNew">
+            <h1 className="bboRegister">Cadastrar-se</h1>
+            <form className="formRegister" onSubmit={fastConfirmTermo}>
+                <input type="text" className="fastInput in" placeholder="Usuário..." onChange={e=>setUsername(e.target.value)} onBlur={chackUser} required/>
+                <input type="email" className="fastInput in" placeholder="E-mail..." onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} required/>
+                <div className='celularClassMundo'>
+                    <PhoneInput placeholder="newPhone" value={whatsapp} onChange={setWhatsapp} defaultCountry="BR" className="telMundo" onBlur={chackZap} />
                 </div>
+                <input type="password" className="fastInput in" placeholder="Senha..." minLength='4' onKeyUp={validarSenhaForca} onChange={e=>setPassword(e.target.value)} required/>
+                <input type="password" className="fastInput in" placeholder="Confirmar a Senha..." onBlur={CheckSenhaIqual} onChange={e=>setConfirmPassword(e.target.value)} required/>
                 
-            </div>
+                {girar ? (
+                  <button className='inputLogin entrarbutton'><i className="fa-solid fa-spinner girar"></i></button>
+                  ):(
+                    <button className="buttonEntrarLogin fastInput">Cadastrar-se</button>
+                )}
+                {error && <h3 className='checkuserRegisterAlert'>Confirme Corretamente a sua Senha!</h3>}
+                {err && <h3 className='checkuserRegisterAlert'>Só é possível registrar com senha Forte ou Excelente</h3>}
+                {classificacao==="Fraca" && <h3 className='checkuserRegisterAlert'>Senha: {classificacao}</h3>}
+                {classificacao==="Média" && <h3 className='errRegister2'>Senha: {classificacao}</h3>}
+                {classificacao==="Forte" && <h3 className='errRegister3'>Senha: {classificacao}</h3>}
+                {classificacao==="Excelente" && <h3 className='errRegister4'>Senha: {classificacao}</h3>}
+                {ale && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este nome!</h3>}
+                {aleEmail && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este email!</h3>}
+                {celular && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este celular!</h3>}
+                {creden && <h3 className='checkuserRegisterAlert'>Credências inválidas!</h3>}
+                <div className="criarNovaContaButtonTermos">
+                    <small className="criarNovaContaButtonTermos"><Link to='termos-politicas' className='politicas'>Termos e Políticas de Uso</Link></small> 
+                </div>
+            </form>
         </div>
     </div>
   )
