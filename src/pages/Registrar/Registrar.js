@@ -107,8 +107,6 @@ export default function Registrar() {
             const resultados = await api.post("/auth/router/numbersearch", {
                 whatsapp: whatsapp,
             })
-            console.log(whatsapp)
-            console.log(resultados.data)
             if(resultados.data){
                 checkValidCelular = true;
             }
