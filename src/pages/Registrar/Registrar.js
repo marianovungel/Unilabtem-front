@@ -171,19 +171,19 @@ export default function Registrar() {
                         })
 
                         setGirar(false)
-                        Swal.fire({
-                            title: 'Foi enviado uma mensagem de confirmação no seu email!',
-                            timer: 15000,
-                            showClass: {
-                              popup: 'animate__animated animate__fadeInDown'
-                            },
-                            hideClass: {
-                              popup: 'animate__animated animate__fadeOutUp'
-                            }
-                          })
+                        // Swal.fire({
+                        //     title: 'Foi enviado uma mensagem de confirmação no seu email!',
+                        //     timer: 15000,
+                        //     showClass: {
+                        //       popup: 'animate__animated animate__fadeInDown'
+                        //     },
+                        //     hideClass: {
+                        //       popup: 'animate__animated animate__fadeOutUp'
+                        //     }
+                        //   })
 
 
-                        window.location.replace("/");
+                        window.location.replace("/registrar/send-confirm-email-to-register-accont");
                     }catch(err){
                         setCreden(true)
                     }

@@ -26,6 +26,7 @@ import Visto from './pages/Visto/Visto';
 import Intercampi from './pages/Intercampi/Intercampi';
 import Termos from './pages/Termos/Termos';
 import ConfirmEmailPage from './pages/ConfirmEmailPage/ConfirmEmailPage';
+import SendEmailConfirm from './pages/ConfirmEmailPage/SendEmailConfirm';
 
 function App() {
 
@@ -60,6 +61,7 @@ function App() {
           <Route path="/intercampi" element={<Intercampi />} exact />
           <Route path="/registrar" element={<Registrar />} exact />
           <Route path="/registrar/termos-politicas" element={<Termos />} exact />
+          <Route path="/registrar/send-confirm-email-to-register-accont" element={<SendEmailConfirm />} exact />
         </Routes>
       </Router>
   );

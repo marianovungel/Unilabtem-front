@@ -3,6 +3,12 @@
     height: 100%;
     box-sizing: border-box;
 }
+.linkPaginaDeLogin{
+    color: #fff;
+}
+.linkPaginaDeLogin:hover{
+    color: aliceblue;
+}
 .headerConfirm{
     width: 45%;
     height: 50px;
