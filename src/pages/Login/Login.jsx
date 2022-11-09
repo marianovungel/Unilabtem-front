@@ -61,14 +61,14 @@ export default function Login() {
   return (
     <div className="fullContentLogin">
         <div className="logoAndText">
-            <img src='./image/new1.png' alt="" className="imagemLogooi" />
-            <p className="paragrafoLogo">
+            <img src='./image/new1.png' alt="" className="imagemLogooii" />
+            <div className="paragrafoLogoLogin">
                 Vem juntar-se à comunidade Unilabtem
                 e terá acesso a produtos, e oportunidades
                  que são divulgados aqui.
-            </p>
-            <p className="paragrafoLogo1">Tudo mais perto e Tudo mais fácil!</p>
-            <p className="paragrafoLogo1">UNILABTEM, Tem de Tudo!</p>
+            </div>
+            <p className="paragrafoLogoLogin1">Tudo mais perto e Tudo mais fácil!</p>
+            <p className="paragrafoLogoLogin1">UNILABTEM, Tem de Tudo!</p>
         </div>
         <div className="sectionLogin">
             <h1 className="LoginH1">Login</h1>
@@ -78,9 +78,9 @@ export default function Login() {
                 <button className="buttonEntrarLogin fastInput" type='submit' disabled={isFetching}>Entrar</button>
                 {ale && <i className='checkuserLogin'>Usuário sem conta. Crie uma conta!</i>}
                 {falsesenha && <i className='checkuserLogin'>Senha inválida...</i>}
-                <div className="criarNovaContaButton">
-                    <small className="criarConta"><Link to='/registrar' id='colorLink'>Criar conta</Link></small>
-                    <small className="criarConta"><Link to='/sendemail' id='colorLinkSenha'>Recuperar Senha</Link></small>
+                <div className="criarNovaContaButtonLogin">
+                    <small className="criarContaLogin"><Link to='/registrar' id='colorLinkLogin'>Criar conta</Link></small>
+                    <small className="criarContaLogin"><Link to='/sendemail' id='colorLinkServerLogin'>Recuperar Senha</Link></small>
                 </div>
             </form>
         </div>
