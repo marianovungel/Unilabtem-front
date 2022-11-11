@@ -236,8 +236,9 @@ export default function Registrar() {
                 {aleEmail && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este email!</h3>}
                 {celular && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este celular!</h3>}
                 {creden && <h3 className='checkuserRegisterAlert'>Credências inválidas!</h3>}
-                <div className="criarNovaContaButtonTermos">
-                    <small className="criarNovaContaButtonTermos"><Link to='termos-politicas' className='politicas'>Termos e Políticas de Uso</Link></small> 
+                <div className="criarNovaContaButtonLogin">
+                    <small className="criarContaLogin"><Link to='/' id='colorLinkLogin'>Login</Link></small>
+                    <small className="criarContaLogin"><Link to='/termos-politicas' id='colorLinkServerLogin'>Termos e Políticas de Uso</Link></small>
                 </div>
             </form>
         </div>

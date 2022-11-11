@@ -26,6 +26,7 @@
     text-align: center;
     font-family: 'Roboto', sans-serif;
     margin-top: -190px;
+    margin-bottom: 10px;
     text-size-adjust: 100pt;
     width: 78%;
     
@@ -195,6 +196,18 @@
         margin-top: -10px;
     }
 }
+@media(min-height: 810px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -150px;
+    }
+}
 @media(max-width: 760px){
     .imagemLogooii{
         width: 350px;
@@ -215,6 +228,90 @@
         text-align: center;
         font-family: 'Roboto', sans-serif;
         margin-top: -10px;
+    }
+}
+@media(min-height: 750px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -50px;
+    }
+}
+@media(min-height: 810px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -80px;
+    }
+}
+@media(min-height: 880px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -120px;
+    }
+}
+@media(min-height: 930px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -160px;
+    }
+}
+@media(min-height: 1000px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -200px;
+    }
+}
+@media(min-height: 1100px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -240px;
+    }
+}
+@media(min-height: 1175px){
+    .sectionLogin{
+        flex: 6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        margin-top: -280px;
     }
 }
 @media(max-width: 650px){
