@@ -238,7 +238,7 @@ export default function Registrar() {
                 {creden && <h3 className='checkuserRegisterAlert'>Credências inválidas!</h3>}
                 <div className="criarNovaContaButtonLogin">
                     <small className="criarContaLogin"><Link to='/' id='colorLinkLogin'>Login</Link></small>
-                    <small className="criarContaLogin"><Link to='/termos-politicas' id='colorLinkServerLogin'>Termos e Políticas de Uso</Link></small>
+                    <small className="criarContaLogin"><Link to='/registrar/termos-politicas' id='colorLinkServerLogin'>Termos e Políticas de Uso</Link></small>
                 </div>
             </form>
         </div>
