@@ -397,7 +397,13 @@
         width: 350px;
         height: 350px;
         object-fit: contain;
-        margin-top: -50px;
+        margin-top: -70px;
+    }
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
     }
     .paragrafoLogo{
         display: none;
