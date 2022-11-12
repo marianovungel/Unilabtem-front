@@ -230,6 +230,102 @@
         margin-top: -10px;
     }
 }
+@media(min-height: 400px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 530px;
+    }
+}
+@media(min-height: 440px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 500px;
+    }
+}
+@media(min-height: 470px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 470px;
+    }
+}
+@media(min-height: 500px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 430px;
+    }
+}
+@media(min-height: 520px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 380px;
+    }
+}
+@media(min-height: 540px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 350px;
+    }
+}
+@media(min-height: 560px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 300px;
+    }
+}
+@media(min-height: 580px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 250px;
+    }
+}
+@media(min-height: 600px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 200px;
+    }
+}
+@media(min-height: 640px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 150px;
+    }
+}
+@media(min-height: 670px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+    }
+}
+@media(min-height: 699px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+    }
+}
 @media(min-height: 750px){
     .sectionLogin{
         flex: 6;
@@ -239,6 +335,12 @@
         align-items: center;
         position: relative;
         height: 100%;
+        margin-top: -50px;
+    }
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
         margin-top: -50px;
     }
 }
@@ -253,6 +355,20 @@
         height: 100%;
         margin-top: -80px;
     }
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -90px;
+    }
+}
+@media(min-height: 860px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -160px;
+    }
 }
 @media(min-height: 880px){
     .sectionLogin{
@@ -263,7 +379,21 @@
         align-items: center;
         position: relative;
         height: 100%;
-        margin-top: -120px;
+        margin-top: -170px;
+    }
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -200px;
+    }
+}
+@media(min-height: 920px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -240px;
     }
 }
 @media(min-height: 930px){
@@ -277,6 +407,36 @@
         height: 100%;
         margin-top: -160px;
     }
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -250px;
+    }
+}
+@media(min-height: 950px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -300px;
+    }
+}
+@media(min-height: 960px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -330px;
+    }
+}
+@media(min-height: 980px){
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -350px;
+    }
 }
 @media(min-height: 1000px){
     .sectionLogin{
@@ -288,6 +448,12 @@
         position: relative;
         height: 100%;
         margin-top: -200px;
+    }
+    .formLogin{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-top: -380px;
     }
 }
 @media(min-height: 1100px){

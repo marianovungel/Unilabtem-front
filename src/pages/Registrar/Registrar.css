@@ -277,6 +277,78 @@
         margin-top: -10px;
     }
 }
+@media(min-height: 400px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -450px;
+    }
+}
+@media(min-height: 440px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -400px;
+    }
+}
+@media(min-height: 480px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -350px;
+    }
+}
+@media(min-height: 520px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -300px;
+    }
+}
+@media(min-height: 560px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -250px;
+    }
+}
+@media(min-height: 600px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -200px;
+    }
+}
+@media(min-height: 640px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -150px;
+    }
+}
+@media(min-height: 680px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -100px;
+    }
+}
 @media(min-height: 700px){
     .fullContentRegister2{
         width: 100%;
@@ -285,6 +357,22 @@
         align-items: center;
         margin-top: -30px;
     }
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -75px;
+    }
+}
+@media(min-height: 720px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: -50px;
+    }
 }
 @media(min-height: 750px){
     .fullContentRegister2{
@@ -292,7 +380,23 @@
         height: 100%;
         display: flex;
         align-items: center;
-        margin-top: -60px;
+        margin-top: -30px;
+    }
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 15px;
+    }
+}
+@media(min-height: 790px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 90px;
     }
 }
 @media(min-height: 800px){
@@ -301,7 +405,16 @@
         height: 100%;
         display: flex;
         align-items: center;
-        margin-top: -100px;
+        margin-top: -30px;
+    }
+}
+@media(min-height: 840px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 170px;
     }
 }
 @media(min-height: 860px){
@@ -310,43 +423,70 @@
         height: 100%;
         display: flex;
         align-items: center;
-        margin-top: -140px;
+        margin-top: -30px;
+    }
+}
+@media(min-height: 880px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 210px;
+    }
+}
+@media(min-height: 930px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 260px;
     }
 }
 @media(min-height: 960px){
-    .fullContentRegister2{
-        width: 100%;
-        height: 100%;
+    .formRegister{
+        width: 70%;
         display: flex;
-        align-items: center;
-        margin-top: -180px;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 280px;
+    }
+}
+@media(min-height: 990px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 320px;
     }
 }
 @media(min-height: 1030px){
-    .fullContentRegister2{
-        width: 100%;
-        height: 100%;
+    .formRegister{
+        width: 70%;
         display: flex;
-        align-items: center;
-        margin-top: -220px;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 370px;
+    }
+}
+@media(min-height: 1070px){
+    .formRegister{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 420px;
     }
 }
 @media(min-height: 1110px){
-    .fullContentRegister2{
-        width: 100%;
-        height: 100%;
+    .formRegister{
+        width: 70%;
         display: flex;
-        align-items: center;
-        margin-top: -250px;
-    }
-}
-@media(min-height: 1200px){
-    .fullContentRegister2{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        margin-top: -290px;
+        flex-direction: column;
+        background-color: red;
+        margin-bottom: 470px;
     }
 }
 @media(max-width: 680px){
