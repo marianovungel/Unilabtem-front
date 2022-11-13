@@ -129,7 +129,7 @@
     background-color: rgba(255, 0, 0, 0.435);
     color: #fff;
     margin-top: 10px;
-    font-size: 14pt;
+    font-size: 1.2rem;
     border-radius: 5px;
 }
 .errRegister2{
@@ -142,7 +142,7 @@
     background-color: #ffd90075;
     color: #fff;
     margin-top: 10px;
-    font-size: 14pt;
+    font-size: 1.2rem;
     border-radius: 5px;
 }
 .errRegister3{
@@ -153,7 +153,7 @@
     justify-content: center;
     margin-top: 10px;
     color: #fff;
-    font-size: 14pt;
+    font-size: 1.2rem;
     border: 1.5px solid #7FFF00;
     background-color: #80ff005a;
     border-radius: 5px;
@@ -166,7 +166,7 @@
     justify-content: center;
     margin-top: 10px;
     color: #fff;
-    font-size: 14pt;
+    font-size: 1.2rem;
     background-color: #0080005f;
     border: 1.5px solid #008000;
     border-radius: 5px;
