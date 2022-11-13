@@ -1,588 +1,170 @@
 .fullContentLogin{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: flex-start;
 }
 
-
-/* ===========Imagem========= */
-.logoAndText{
+/* ========Imagem======== */
+.logoAndTextLogin{
     flex: 6;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    position: relative;
+    /* background-color: red; */
 }
-
-.imagemLogooii{
-    width: 600px;
-    height: 600px;
-    object-fit: contain;
+.imagemLogooiiLogin{
+    margin-top: 150px;
 }
-.paragrafoLogoLogin{
-    font-size: 18pt;
+.paragrafoLogoLoginNew{
+    width: 80%;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    margin-top: -190px;
-    margin-bottom: 10px;
-    text-size-adjust: 100pt;
-    width: 78%;
-    
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
-.paragrafoLogoLogin1{
-    font-size: 18pt;
+.paragrafoLogoLogin1New{
+    width: 80%;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    margin-top: -10px;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
-.criarContaLogin{
-    font-weight: 900;
-    font-size: 14pt;
-    font-family: 'Roboto', sans-serif;
-
-}
-
-/* ===========form========= */
-.sectionLogin{
+/* ========Form======== */
+.sectionLoginForm{
     flex: 6;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    position: relative;
-    height: 100%;
 }
-.LoginH1{
-    width: 70%;
-    margin-bottom: 25px;
-    margin-top: -40px;
-    font-size: 40pt;
-    font-family: 'Roboto', sans-serif;
-}
-.formLogin{
+.LoginH1Login{
+    margin-top: 150px;
     width: 70%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
-.fastInput{
+.formLoginLogin{
+    width: 100%;
+    display: flex;flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fastInputLogin{
+    width: 70%;
     height: 45px;
-    margin-bottom: 25px;
+    margin-top: 25px;
     border-radius: 5px;
+}
+.inLogin{
+    border: none;
+    border-bottom: 2.5px solid #666;
+    padding-left: 10px;
+    font: 1.5rem;
+}
+.criarNovaContaButtonLoginNew{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#colorLinkLoginNew{
+    color: #000;
+    font-weight: 600;
     font-size: 14pt;
-    font-family: 'Roboto', sans-serif;
-
 }
-.in{
-    border: none;
-    border-bottom: 1.8px solid #666;
-    border-radius: 0px;
-    padding-left: 5px;
+#colorLinkLoginNew:hover{
+    color: blue;
+    transition: 0.3s;
 }
-.buttonEntrarLogin{
-    border: none;
-    background-color: rgb(14, 14, 200);
-    color: #fff;
+#colorLinkServerLoginNew{
+    color: #666;
+    font-weight: 600;
+    font-size: 12pt;
 }
-.checkuserLogin{
-    width: 100%;
-    height: 37px;
+#colorLinkServerLoginNew:hover{
+    color: blue;
+    transition: 0.3s;
+}
+.checkuserRegisterAlertLogin{
+    width: 70%;
+    height: 45px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid red;
-    background-color: rgba(255, 0, 0, 0.435);
+    border: 2px solid red;
     color: #fff;
-    margin-bottom: 10px;
-}
-.criarNovaContaButtonLogin{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    background-color: rgba(255, 0, 0, 0.384);
 }
 
-#colorLinkLogin{
-    color: black;
-}
-#colorLinkLogin:hover{
-    color: blue;
-    transition: 0.3s;
-}
-#colorLinkServerLogin{
-    color: #666;
-    font-size: 14px;
-}
-#colorLinkServerLogin:hover{
-    color: blue;
-    transition: 0.3s;
-}
-
-/* ===========================Responsividade===================== */
-@media(max-width: 1460px){
-    .paragrafoLogoLogin{
-        font-size: 18pt;
+/* ==================response============ */
+@media(max-width: 800px){
+    .paragrafoLogoLoginNew{
+        width: 95%;
         text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -190px;
-        margin-bottom: 15px;
-        width: 100%;
+        font-size: 1rem;
+        margin-top: 10px;
     }
-    .paragrafoLogoLogin1{
-        font-size: 18pt;
+    .paragrafoLogoLogin1New{
+        width: 80%;
         text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -10px;
+        font-size: 1rem;
+        margin-top: 10px;
     }
 }
-@media(max-width: 1000px){
-    .imagemLogooii{
-        width: 400px;
-        height: 400px;
-        object-fit: contain;
-        margin-bottom: 50px;
+@media(max-width: 700px){
+    .paragrafoLogoLoginNew,
+    .paragrafoLogoLogin1New,
+    .LoginH1Login{
+        display: none;
     }
-    .paragrafoLogoLogin{
-        font-size: 15pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -190px;
-        margin-bottom: 15px;
-        width: 100%;
-    }
-    .paragrafoLogoLogin1{
-        font-size: 15pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -10px;
-    }
-}
-@media(max-width: 950px){
-    .paragrafoLogoLogin{
-        font-size: 13pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -190px;
-        margin-bottom: 15px;
-        width: 99.2%;
-    }
-    .paragrafoLogoLogin1{
-        font-size: 13pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -10px;
-    }
-}
-@media(max-width: 830px){
-    .imagemLogooii{
-        width: 370px;
-        height: 370px;
-        object-fit: contain;
-        margin-bottom: 50px;
-    }
-    .paragrafoLogoLogin{
-        font-size: 12pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -190px;
-        margin-bottom: 15px;
-        width: 100%;
-    }
-    .paragrafoLogoLogin1{
-        font-size: 12pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -10px;
-    }
-}
-@media(min-height: 810px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -150px;
-    }
-}
-@media(max-width: 760px){
-    .imagemLogooii{
-        width: 350px;
-        height: 350px;
-        object-fit: contain;
-        margin-bottom: 50px;
-    }
-    .paragrafoLogoLogin{
-        font-size: 10pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -190px;
-        margin-bottom: 15px;
-        width: 99.8%;
-    }
-    .paragrafoLogoLogin1{
-        font-size: 10pt;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        margin-top: -10px;
-    }
-}
-@media(min-height: 400px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 530px;
-    }
-}
-@media(min-height: 440px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 500px;
-    }
-}
-@media(min-height: 470px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 470px;
-    }
-}
-@media(min-height: 500px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 430px;
-    }
-}
-@media(min-height: 520px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 380px;
-    }
-}
-@media(min-height: 540px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 350px;
-    }
-}
-@media(min-height: 560px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 300px;
-    }
-}
-@media(min-height: 580px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 250px;
-    }
-}
-@media(min-height: 600px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 200px;
-    }
-}
-@media(min-height: 640px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 150px;
-    }
-}
-@media(min-height: 670px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 100px;
-    }
-}
-@media(min-height: 699px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: 80px;
-    }
-}
-@media(min-height: 750px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -50px;
-    }
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -50px;
-    }
-}
-@media(min-height: 810px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -80px;
-    }
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -90px;
-    }
-}
-@media(min-height: 860px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -160px;
-    }
-}
-@media(min-height: 880px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -170px;
-    }
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -200px;
-    }
-}
-@media(min-height: 920px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -240px;
-    }
-}
-@media(min-height: 930px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -160px;
-    }
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -250px;
-    }
-}
-@media(min-height: 950px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -300px;
-    }
-}
-@media(min-height: 960px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -330px;
-    }
-}
-@media(min-height: 980px){
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -350px;
-    }
-}
-@media(min-height: 1000px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -200px;
-    }
-    .formLogin{
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        margin-top: -380px;
-    }
-}
-@media(min-height: 1100px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -240px;
-    }
-}
-@media(min-height: 1175px){
-    .sectionLogin{
-        flex: 6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -280px;
-    }
-}
-@media(max-width: 650px){
-    .criarNovaContaButtonLogin{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .criarContaLogin{
-        font-weight: 700;
-        font-size: 10pt;
-        font-family: 'Roboto', sans-serif;
-    }
-    #colorLinkLogin{
-        color: black;
-        font-size: 12pt;
-    }
-    #colorLinkServerLogin{
-        color: #666;
-        font-size: 11px;
-    }
-}
-
-@media(max-width: 600px){
     .fullContentLogin{
         width: 100%;
-        height: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: flex-start;
     }
-    .logoAndText{
+    .logoAndTextLogin{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .imagemLogooiiLogin{
+        margin-top: 50px;
+    }
+    .sectionLoginForm{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: -450px;
+    }
+    .formLoginLogin{
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        position: relative;
-    }
-    .imagemLogooii{
-        width: 350px;
-        height: 350px;
-        object-fit: contain;
-        margin-top: -50px;
-    }
-    .paragrafoLogoLogin{
-        display: none;
-    }
-    .paragrafoLogoLogin1{
-        display: none;
-    }
-    .sectionLogin{
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -950px;
-    }
-    .LoginH1{
-        display: none;
     }
 }
 @media(max-width: 500px){
-    .formLogin{
-        width: 85%;
-        display: flex;
-        flex-direction: column;
+    .imagemLogooiiLogin{
+        margin-top: 60px;
+        width: 300px;
     }
 }
-@media(max-width: 400px){
-    .fullContentLogin{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .logoAndText{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        position: relative;
-    }
-    .imagemLogooii{
-        width: 350px;
-        height: 350px;
-        object-fit: contain;
-        margin-top: -550px;
-    }
-    
-    .sectionLogin{
-        width: 95%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        height: 100%;
-        margin-top: -950px;
-    }
-    .LoginH1{
-        display: none;
+@media(max-width: 450px){
+    .imagemLogooiiLogin{
+        margin-top: 80px;
+        width: 250px;
     }
 }

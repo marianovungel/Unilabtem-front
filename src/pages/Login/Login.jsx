@@ -60,27 +60,27 @@ export default function Login() {
 
   return (
     <div className="fullContentLogin">
-        <div className="logoAndText">
-            <img src='./image/new1.png' alt="" className="imagemLogooii" />
-            <div className="paragrafoLogoLogin">
+        <div className="logoAndTextLogin">
+            <img src='./image/newLogo.png' alt="" className="imagemLogooiiLogin" />
+            <div className="paragrafoLogoLoginNew">
                 Vem juntar-se à comunidade Unilabtem
                 e terá acesso a produtos, e oportunidades
                  que são divulgados aqui.
             </div>
-            <p className="paragrafoLogoLogin1">Tudo mais perto e Tudo mais fácil!</p>
-            <p className="paragrafoLogoLogin1">UNILABTEM, Tem de Tudo!</p>
+            <div className="paragrafoLogoLogin1New none">Tudo mais perto e Tudo mais fácil!</div>
+            <div className="paragrafoLogoLogin1New">UNILABTEM, Tem de Tudo!</div>
         </div>
-        <div className="sectionLogin">
-            <h1 className="LoginH1">Login</h1>
-            <form className="formLogin" onSubmit={handleSubmit}>
-                <input type="text" className="fastInput in" placeholder="Usuário..." ref={userRef} minLength="2" onBlur={chackUser} required />
-                <input type="password" className="fastInput in" placeholder="Senha..." minLength='4' ref={passwordRef} required />
-                <button className="buttonEntrarLogin fastInput" type='submit' disabled={isFetching}>Entrar</button>
-                {ale && <i className='checkuserLogin'>Usuário sem conta. Crie uma conta!</i>}
-                {falsesenha && <i className='checkuserLogin'>Senha inválida...</i>}
-                <div className="criarNovaContaButtonLogin">
-                    <small className="criarContaLogin"><Link to='/registrar' id='colorLinkLogin'>Criar conta</Link></small>
-                    <small className="criarContaLogin"><Link to='/sendemail' id='colorLinkServerLogin'>Recuperar Senha</Link></small>
+        <div className="sectionLoginForm">
+            <h1 className="LoginH1Login">Login</h1>
+            <form className="formLoginLogin" onSubmit={handleSubmit}>
+                <input type="text" className="fastInputLogin inLogin" placeholder="Usuário..." ref={userRef} minLength="2" onBlur={chackUser} required />
+                <input type="password" className="fastInputLogin inLogin" placeholder="Senha..." minLength='4' ref={passwordRef} required />
+                <button className="buttonEntrarLogin fastInputLogin" type='submit' disabled={isFetching}>Entrar</button>
+                {ale && <i className='checkuserRegisterAlertLogin'>Usuário sem conta. Crie uma conta!</i>}
+                {falsesenha && <i className='checkuserRegisterAlertLogin'>Senha inválida...</i>}
+                <div className="criarNovaContaButtonLoginNew">
+                    <small className="criarContaLoginNew"><Link to='/registrar' id='colorLinkLoginNew'>Criar conta</Link></small>
+                    <small className="criarContaLoginNew"><Link to='/sendemail' id='colorLinkServerLoginNew'>Recuperar Senha</Link></small>
                 </div>
             </form>
         </div>
