@@ -65,9 +65,8 @@ export default function Login() {
             <div className="paragrafoLogoLoginNew">
                 Vem juntar-se à comunidade Unilabtem
                 e terá acesso a produtos, e oportunidades
-                 que são divulgados aqui.
+                 que são divulgados aqui, Tudo mais perto e Tudo mais fácil!
             </div>
-            <div className="paragrafoLogoLogin1New none">Tudo mais perto e Tudo mais fácil!</div>
             <div className="paragrafoLogoLogin1New">UNILABTEM, Tem de Tudo!</div>
         </div>
         <div className="sectionLoginForm">
@@ -75,7 +74,7 @@ export default function Login() {
             <form className="formLoginLogin" onSubmit={handleSubmit}>
                 <input type="text" className="fastInputLogin inLogin" placeholder="Usuário..." ref={userRef} minLength="2" onBlur={chackUser} required />
                 <input type="password" className="fastInputLogin inLogin" placeholder="Senha..." minLength='4' ref={passwordRef} required />
-                <button className="buttonEntrarLogin fastInputLogin" type='submit' disabled={isFetching}>Entrar</button>
+                <button className="buttonEntr fastInputLogin" type='submit' disabled={isFetching}>Entrar</button>
                 {ale && <i className='checkuserRegisterAlertLogin'>Usuário sem conta. Crie uma conta!</i>}
                 {falsesenha && <i className='checkuserRegisterAlertLogin'>Senha inválida...</i>}
                 <div className="criarNovaContaButtonLoginNew">

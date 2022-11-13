@@ -200,14 +200,13 @@ export default function Registrar() {
     
   return (
     <div className="fullContentRegister2">
-        <div className="logoAndText boo">
-            <img src="./image/new1.png" alt="" className="imagemLogooi" />
+        <div className="logoAndText">
+            <img src="./image/newLogo.png" alt="" className="imagemLogooi" />
             <p className="paragrafoLogo">
                 Vem juntar-se à comunidade Unilabtem
                 e terá acesso a produtos, e oportunidades
-                 que são divulgados aqui.
+                 que são divulgados aqui, Tudo mais perto e Tudo mais fácil!
             </p>
-            <p className="paragrafoLogo1">Tudo mais perto e Tudo mais fácil!</p>
             <p className="paragrafoLogo1">UNILABTEM, Tem de Tudo!</p>
         </div>
         <div className="sectionRegisterNew">
@@ -215,7 +214,7 @@ export default function Registrar() {
             <form className="formRegister" onSubmit={fastConfirmTermo}>
                 <input type="text" className="fastInput in" placeholder="Usuário..." onChange={e=>setUsername(e.target.value)} onBlur={chackUser} required/>
                 <input type="email" className="fastInput in" placeholder="E-mail..." onChange={e=>setEmail(e.target.value)} onBlur={chackEmail} required/>
-                <div className='celularClassMundo'>
+                <div className='fastInputFone'>
                     <PhoneInput placeholder="newPhone" value={whatsapp} onChange={setWhatsapp} defaultCountry="BR" className="telMundo" onBlur={chackZap} />
                 </div>
                 <input type="password" className="fastInput in" placeholder="Senha..." minLength='4' onKeyUp={validarSenhaForca} onChange={e=>setPassword(e.target.value)} required/>
@@ -224,7 +223,7 @@ export default function Registrar() {
                 {girar ? (
                   <button className='inputLogin entrarbutton'><i className="fa-solid fa-spinner girar"></i></button>
                   ):(
-                    <button className="buttonEntrarLogin fastInput">Cadastrar-se</button>
+                    <button className="entrarbuttonRegister fastInput">Cadastrar-se</button>
                 )}
                 {error && <h3 className='checkuserRegisterAlert'>Confirme Corretamente a sua Senha!</h3>}
                 {err && <h3 className='checkuserRegisterAlert'>Só é possível registrar com senha Forte ou Excelente</h3>}
@@ -236,9 +235,9 @@ export default function Registrar() {
                 {aleEmail && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este email!</h3>}
                 {celular && <h3 className='checkuserRegisterAlert'>Já existe usuário registrado com este celular!</h3>}
                 {creden && <h3 className='checkuserRegisterAlert'>Credências inválidas!</h3>}
-                <div className="criarNovaContaButtonLogin">
-                    <small className="criarContaLogin"><Link to='/' id='colorLinkLogin'>Login</Link></small>
-                    <small className="criarContaLogin"><Link to='/registrar/termos-politicas' id='colorLinkServerLogin'>Termos e Políticas de Uso</Link></small>
+                <div className="criarNovaContaButtonRegister">
+                    <small className="criarConta"><Link to='/' id='colorLinkRegister'>Login</Link></small>
+                    <small className="criarConta"><Link to='/registrar/termos-politicas' id='colorLinkServerRegister'>Termos e Políticas de Uso</Link></small>
                 </div>
             </form>
         </div>

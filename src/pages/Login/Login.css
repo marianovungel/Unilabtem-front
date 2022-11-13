@@ -18,7 +18,7 @@
     margin-top: 150px;
 }
 .paragrafoLogoLoginNew{
-    width: 80%;
+    width: 70%;
     text-align: center;
     font-size: 1.2rem;
     margin-top: 10px;
@@ -101,6 +101,12 @@
     border: 2px solid red;
     color: #fff;
     background-color: rgba(255, 0, 0, 0.384);
+}
+.buttonEntr{
+    color: #fff;
+    background-color: rgb(50, 50, 241);
+    border: none;
+    font-size: 1.2rem;
 }
 
 /* ==================response============ */
