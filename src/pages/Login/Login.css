@@ -161,6 +161,12 @@
         justify-content: flex-start;
         align-items: center;
     }
+    .fastInputLogin{
+        width: 85%;
+        height: 45px;
+        margin-top: 25px;
+        border-radius: 5px;
+    }
 }
 @media(max-width: 500px){
     .imagemLogooiiLogin{
