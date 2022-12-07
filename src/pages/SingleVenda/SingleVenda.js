@@ -31,7 +31,6 @@ export default function SingleVenda() {
       setTitle(res.data.title)
       setDesc(res.data.desc)
       setPreco(res.data.preco)
-      console.log(res)
     }
     getPost()
     setShowButtons(true)

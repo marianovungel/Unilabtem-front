@@ -57,6 +57,74 @@
     margin-top: 25px;
     border-radius: 5px;
 }
+.menuSettLogin{
+    width: 70%;
+    height: 45px;
+    margin-top: 25px;
+    border: none;
+    display: flex;
+}
+.loginSystem{
+    flex: 6;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14pt;
+    border: 1px solid rgb(50, 50, 241);
+    border-left: none;
+    border-top: none;
+    cursor: pointer;
+    background-color: rgb(50, 50, 241);
+}
+.system{
+    flex: 6;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #666;
+    border-left: none;
+    border-top: none;
+    cursor: pointer;
+}
+.loginSig{
+    flex: 6;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14pt;
+    border: 1px solid rgb(50, 50, 241);
+    border-left: none;
+    border-top: none;
+    cursor: pointer;
+    background-color: rgb(50, 50, 241);
+}
+.loginNull{
+    flex: 6;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(50, 50, 241);
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+}
+.loginNullSys{
+    flex: 6;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(50, 50, 241);
+    border-left: none;
+    border-top: none;
+    cursor: pointer;
+}
 .inLogin{
     border: none;
     border-bottom: 2.5px solid #666;

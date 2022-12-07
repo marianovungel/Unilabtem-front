@@ -27,6 +27,8 @@ import Intercampi from './pages/Intercampi/Intercampi';
 import Termos from './pages/Termos/Termos';
 import ConfirmEmailPage from './pages/ConfirmEmailPage/ConfirmEmailPage';
 import SendEmailConfirm from './pages/ConfirmEmailPage/SendEmailConfirm';
+import Monitor from './pages/Monitor/Monitor';
+import PageSingVenda from './pages/pageSingVenda/PageSingVenda';
 
 function App() {
 
@@ -60,6 +62,8 @@ function App() {
           <Route path="/visto" element={<Visto />} exact />
           <Route path="/intercampi" element={<Intercampi />} exact />
           <Route path="/registrar" element={<Registrar />} exact />
+          <Route path="/monitor" element={<Monitor />} exact />
+          <Route path="/monitor/venda/:id" element={<PageSingVenda />} exact />
           <Route path="/registrar/termos-politicas" element={<Termos />} exact />
           <Route path="/registrar/send-confirm-email-to-register-accont" element={<SendEmailConfirm />} exact />
         </Routes>
