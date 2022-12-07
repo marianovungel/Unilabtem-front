@@ -4,7 +4,6 @@
     display: flex;
     align-items: flex-start;
 }
-
 /* ========Imagem======== */
 .logoAndTextLogin{
     flex: 6;
@@ -234,6 +233,27 @@
         height: 45px;
         margin-top: 25px;
         border-radius: 5px;
+    }
+    .menuSettLogin{
+        width: 90%;
+        height: 45px;
+        margin-top: 25px;
+        border: none;
+        display: flex;
+    }
+    .checkuserRegisterAlertLogin{
+        width: 90%;
+        height: 45px;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid red;
+        color: #fff;
+        background-color: rgba(255, 0, 0, 0.384);
     }
     .criarNovaContaButtonLoginNew{
         width: 90%;
