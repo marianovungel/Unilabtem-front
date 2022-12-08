@@ -10,10 +10,7 @@ export default function Vendapost() {
   useEffect(()=>{
     const getVenda = async ()=>{
       try{
-        const product = await api.post('/produto/monitor', {
-          estado: "analise"
-        })
-        console.log(product)
+        const product = await api.get('/produtomonitor')
         setVenda(product.data)
       }catch(err){
         alert(err.message)
@@ -24,12 +21,12 @@ export default function Vendapost() {
   return (
     <div className='fullVendaPost'>
      {venda?.map((post)=>(
-        <Link className="titleColor" to={`/monitor/venda/${post?._id}`} key={post._id}>
+        <Link className="titleColor" to={`/monitor-venda/${post?._id}`} key={post._id}>
           <div className="cardVendaPost">
             <h6 className='titleVendaPost'>{post.title}</h6>
             <div className='verPost'>
               <i className='verText'>Ver o Post</i>
-              <i class="fa-regular fa-eye eyesClass"></i>
+              <i className="fa-regular fa-eye eyesClass"></i>
             </div>
           </div>
         </Link>

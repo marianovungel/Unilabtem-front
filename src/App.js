@@ -63,7 +63,7 @@ function App() {
           <Route path="/intercampi" element={<Intercampi />} exact />
           <Route path="/registrar" element={<Registrar />} exact />
           <Route path="/monitor" element={<Monitor />} exact />
-          <Route path="/monitor/venda/:id" element={<PageSingVenda />} exact />
+          <Route path="/monitor-venda/:id" element={<PageSingVenda />} exact />
           <Route path="/registrar/termos-politicas" element={<Termos />} exact />
           <Route path="/registrar/send-confirm-email-to-register-accont" element={<SendEmailConfirm />} exact />
         </Routes>

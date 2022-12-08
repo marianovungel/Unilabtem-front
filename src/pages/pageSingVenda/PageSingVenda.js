@@ -2,17 +2,51 @@ import React, { useEffect, useState } from 'react'
 import './PageSingVenda.css'
 import api from '../../services/api'
 import { useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const URLImg = "https://festupload.s3.amazonaws.com/";
 
 export default function PageSingVenda() {
     const location = useLocation();
     const path = location.pathname.split("/")[2]
     const [post, setPost] = useState({})
+    console.log(path)
+
+    const Autorizar = async ()=>{
+        try{
+            await api.put("/produtomonitor/"+path, {
+                estado: "visivel"
+            })
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Autorizado com Sucesso!',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            window.location.replace("/monitor");
+        }catch(err){}
+    }
+
+    const Reprovar = async ()=>{
+        try{
+            await api.delete("/produtomonitor/"+path)
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Reprovado com Sucesso!',
+                showConfirmButton: false,
+                timer: 1500
+              })
+            window.location.replace("/monitor");
+        }catch(err){}
+    }
 
     useEffect(()=>{
         const getPost = async ()=>{
-          const res = await api.get("/produto/"+path)
-          setPost(res.data)
+            try{
+                const res = await api.get("/produto/"+path)
+                setPost(res.data)
+            }catch(err){}
         }
         getPost()
       }, [path])
@@ -20,7 +54,7 @@ export default function PageSingVenda() {
   return (
     <div className='MonitorContent'>
         <div className="menuMonitor">
-            <img src="./image/newLogo.png" alt=" " className="imgLOgoMonitor" />
+            <img src="../image/newLogo.png" alt=" " className="imgLOgoMonitor" />
         </div>
         <div className="menuMonitorInferior">
             <i className="painelMenu">Painel de Monitoramento - UNILABTEM</i>
@@ -68,11 +102,9 @@ export default function PageSingVenda() {
             </div>
             
                 <div className='butoomContent'>
-                    <div className='buttonZapDiv' ><button  className='buttonEditar' id='colorAprovado'>Aprovar <i class="fa-solid fa-thumbs-up"></i></button></div>
-                
+                    <div className='buttonZapDiv' ><button onClick={Autorizar}  className='buttonEditar' id='colorAprovado'>Aprovar <i className="fa-solid fa-thumbs-up"></i></button></div>
                     <div></div>
-
-                    <div className='buttonZapDiv'><button  className='buttonDeletar' >Reprovar <i class="fa-solid fa-thumbs-down"></i></button></div>
+                    <div className='buttonZapDiv'><button  className='buttonDeletar' onClick={Reprovar} >Reprovar <i className="fa-solid fa-thumbs-down"></i></button></div>
                 </div>
             <footer className=''></footer>
             </div>
