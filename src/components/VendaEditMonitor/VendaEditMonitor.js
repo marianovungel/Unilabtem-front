@@ -17,14 +17,12 @@ export default function VendaEditMonitor() {
           setProdutoVenda([...produtoVenda, response.data[x]])
         }
       }
-      console.log(tamanho)
-      console.log(produtoVenda)
     }catch(err){}
   }
 
   useEffect(() => {
     getProdutoVenda();
-  }, [])
+  }, )
 
   return (
     <div className='fullVendaPost'>
