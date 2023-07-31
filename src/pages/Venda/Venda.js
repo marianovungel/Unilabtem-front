@@ -8,15 +8,15 @@ import api from '../../services/api'
 import upload from '../../services/upload'
 import { Link} from 'react-router-dom'
 import Swal from 'sweetalert2';
-const URLImg = "https://festupload.s3.amazonaws.com/";
 //upload img
 async function postImage({image, description}) {
   const formData = new FormData();
   formData.append("image", image)
   formData.append("description", description)
 
-  const result = await upload.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-  return result.data
+  const result = await upload.post('/upload/upload', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+  console.log(result.data.url)
+  return result.data.url;
 }
 
 function Venda() {
@@ -48,7 +48,8 @@ function Venda() {
       try{
         const description = Date.now() + file.name;
         const result = await postImage({image: file, description})
-        newPost.photo = result.imagePath.split("/")[2];
+        newPost.photo = result;
+        console.log(newPost)
       }catch(err){}
     }
     try{
@@ -146,7 +147,7 @@ function Venda() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -166,7 +167,7 @@ function Venda() {
               <textarea placeholder='descrição...' className="storynew" rows="10" cols="33" required onChange={(e)=> setDesc(e.target.value)} ></textarea>
               {girar ? (
 
-              <button className='inputProdutonew colorbutton' type='submit'> <i class="fa-solid fa-circle-notch girar"></i></button>
+              <button className='inputProdutonew colorbutton' type='submit'> <i className="fa-solid fa-circle-notch girar"></i></button>
               ):(
 
               <button className='inputProdutonew colorbutton' type='submit'> Cadastrar </button>

@@ -5,22 +5,44 @@ import VendaEditMonitor from '../../components/VendaEditMonitor/VendaEditMonitor
 import Vendapost from '../../components/VedaPost/Vendapost'
 import api from '../../services/api'
 import './Monitor.css'
+import DoacaoMonitor from '../../components/DoacaoMonitor/DoacaoMonitor'
+import DoacaoEditMonitor from '../../components/DoacaoEditMonitor/DoacaoEditMonitor'
 
 export default function Monitor() {
     const [menumonitor, setMenumonitor] = useState(true)
     const [postvendam, setPostvendam] = useState(false)
     const [edvenda, setEdvenda] = useState(false)
+    const [postdoacao, setPostdoacao] = useState(false)
+    const [editpostdoacao, setEditpostdoacao] = useState(false)
     const [vendapn, setVendapn] = useState(0)
 
 
     const setVenda = ()=>{
         setMenumonitor(false)
+        setPostdoacao(false)
+        setEditpostdoacao(false)
         setPostvendam(true)
     }
     const setEdVenda = ()=>{
         setMenumonitor(false)
+        setEditpostdoacao(false)
+        setPostdoacao(false)
         setPostvendam(false)
         setEdvenda(true)
+    }
+    const setDoacao = ()=>{
+        setMenumonitor(false)
+        setEditpostdoacao(false)
+        setPostdoacao(true)
+        setPostvendam(false)
+        setEdvenda(false)
+    }
+    const setEditDoacao = ()=>{
+        setMenumonitor(false)
+        setEditpostdoacao(true)
+        setPostdoacao(false)
+        setPostvendam(false)
+        setEdvenda(false)
     }
 
     const calcularVenda = async ()=>{
@@ -71,7 +93,7 @@ export default function Monitor() {
                             desejam <b className='editarAmarelo'>EDITAR</b> (a espera de aprovação).
                         </p>
                     </div>
-                    <div className="cardMonitor">
+                    <div className="cardMonitor" onClick={setDoacao}>
                         <h4 className="titleCardMonitor">Postar Doação</h4>
                         <p className="textMonitor">
                             Neste Carde tem as doações que 
@@ -79,7 +101,7 @@ export default function Monitor() {
                             desejam <b className='verdeDivulgar'>DIVULGAR</b> (a espera de aprovação).
                         </p>
                     </div>
-                    <div className="cardMonitor">
+                    <div className="cardMonitor" onClick={setEditDoacao}>
                         <h4 className="titleCardMonitor">Editar Doação</h4>
                         <p className="textMonitor">
                             Neste Carde tem os produtos que 
@@ -123,7 +145,8 @@ export default function Monitor() {
                 
                 {postvendam && (<Vendapost /> )}
                 {edvenda && (<VendaEditMonitor /> )}
-                {/* <SingleVendaPost /> */}
+                {postdoacao && (<DoacaoMonitor />)}
+                {editpostdoacao && (<DoacaoEditMonitor />)}
                 
             </div>
         </div>

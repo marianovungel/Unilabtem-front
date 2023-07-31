@@ -2,16 +2,16 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import api from '../../services/api'
-import './VendaEditMonitor.css'
+import './DoacaoEditMonitor.css'
 import { Link } from 'react-router-dom'
 
-export default function VendaEditMonitor() {
+export default function DoacaoEditMonitor() {
 
   const [produtoVenda, setProdutoVenda] = useState([])
 
   const getProdutoVenda = async ()=>{
     try{
-      const response = await api.get('/produtomonitor/checkUpdate');
+      const response = await api.get('/doacaomonitor/check/true');
       setProdutoVenda(response.data)
       console.log(response.data)
     }catch(err){}
@@ -24,7 +24,7 @@ export default function VendaEditMonitor() {
   return (
     <div className='fullVendaPost'>
       {produtoVenda?.map((post)=>(
-        <Link className="titleColor" to={`/monitor-vendaedit/${post?._id}`} key={post._id}>
+        <Link className="titleColor" to={`/monitor-doacaoedit/${post?._id}`} key={post._id}>
           <div className="cardVendaPost">
             <h6 className='titleVendaPost'>{post.title}</h6>
             <div className='verPost'>
@@ -37,3 +37,4 @@ export default function VendaEditMonitor() {
     </div>
   )
 }
+

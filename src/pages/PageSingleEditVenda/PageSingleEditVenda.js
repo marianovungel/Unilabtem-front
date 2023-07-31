@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import './PageSingVenda.css'
+import './PageSingleEditVenda.css'
 import api from '../../services/api'
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
-export default function PageSingVenda() {
+export default function PageSingleEditVenda() {
     const location = useLocation();
     const path = location.pathname.split("/")[2]
     const [post, setPost] = useState({})
     // console.log(path)
-
     const Autorizar = async ()=>{
         try{
-            await api.put("/produtomonitor/"+path, {
-                estado: "visivel"
+            await api.put("/produtomonitor/ed/"+path, {
+              updateToken: post.updateToken
             })
             Swal.fire({
                 position: 'center',
@@ -29,7 +28,7 @@ export default function PageSingVenda() {
 
     const Reprovar = async ()=>{
         try{
-            await api.delete("/produtomonitor/"+path)
+            await api.put("/produtomonitor/recusar/"+path)
             Swal.fire({
                 position: 'center',
                 icon: 'error',
@@ -44,7 +43,7 @@ export default function PageSingVenda() {
     useEffect(()=>{
         const getPost = async ()=>{
             try{
-                const res = await api.get("/produto/"+path)
+                const res = await api.get("/produtomonitor/token/"+path)
                 setPost(res.data)
             }catch(err){}
         }
@@ -92,6 +91,7 @@ export default function PageSingVenda() {
                 <div className='codigoItem'>
                 <p>Cód. Item </p>
                 </div>
+                <p>R$ {post.title}</p>
                 <h2>R$ {post.preco}</h2>
                 <p>Vendedor: {post.username}</p>
                 <p>Descrição: {post.desc}</p>
@@ -116,3 +116,4 @@ export default function PageSingVenda() {
     </div>
   )
 }
+

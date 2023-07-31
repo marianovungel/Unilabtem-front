@@ -6,7 +6,6 @@ import {Context} from '../../Context/Context'
 import upload from '../../services/upload'
 import api from '../../services/api'
 import { Link } from 'react-router-dom'
-const URLImg = "https://festupload.s3.amazonaws.com/";
 
 //upload img
 async function postImage({image, description}) {
@@ -14,8 +13,9 @@ async function postImage({image, description}) {
     formData.append("image", image)
     formData.append("description", description)
   
-    const result = await upload.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-    return result.data
+    const result = await upload.post('/upload/upload', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+    console.log(result.data.url)
+    return result.data.url;
   }
 
 export default function CadastrarAluguel() {
@@ -65,7 +65,7 @@ export default function CadastrarAluguel() {
           try{
             const description = Date.now() + file1.name;
             const result = await postImage({image: file1, description})
-            newPost.photo1 = result.imagePath.split("/")[2];
+            newPost.photo1 = result
             
             
           }catch(err){}
@@ -74,7 +74,7 @@ export default function CadastrarAluguel() {
           try{
             const description = Date.now() + file2.name;
             const result = await postImage({image: file2, description})
-            newPost.photo2 = result.imagePath.split("/")[2];
+            newPost.photo2 = result
             
             
           }catch(err){}
@@ -83,7 +83,7 @@ export default function CadastrarAluguel() {
             try{
               const description = Date.now() + file3.name;
               const result = await postImage({image: file3, description})
-              newPost.photo3 = result.imagePath.split("/")[2];
+              newPost.photo3 = result
               
               
             }catch(err){}
@@ -92,7 +92,7 @@ export default function CadastrarAluguel() {
             try{
               const description = Date.now() + file4.name;
               const result = await postImage({image: file4, description})
-              newPost.photo4 = result.imagePath.split("/")[2];
+              newPost.photo4 = result
               
               
             }catch(err){}
@@ -101,7 +101,7 @@ export default function CadastrarAluguel() {
             try{
               const description = Date.now() + file5.name;
               const result = await postImage({image: file5, description})
-              newPost.photo5 = result.imagePath.split("/")[2];
+              newPost.photo5 = result
               
               
             }catch(err){}
@@ -185,7 +185,7 @@ export default function CadastrarAluguel() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>

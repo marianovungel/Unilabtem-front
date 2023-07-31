@@ -7,7 +7,6 @@ import { Link, useLocation} from 'react-router-dom';
 import api from '../../services/api'
 import { Context } from '../../Context/Context';
 import Swal from 'sweetalert2';
-const URLImg = "https://festupload.s3.amazonaws.com/";
 // import { Link } from 'react-router-dom';
 
 
@@ -205,7 +204,7 @@ const TodosPro = ()=>{
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -218,7 +217,7 @@ const TodosPro = ()=>{
           <div className='imgContent'>
             <p id='categoria'>Categoria: Venda</p>
             <div className='imgDivSingle'>
-              <img id='photoVendaId' src={URLImg+post.photo} alt='#' />
+              <img id='photoVendaId' src={post.photo} alt='#' />
             </div>
             
           </div>

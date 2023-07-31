@@ -26,7 +26,6 @@ export default function Exe() {
         FetchDesapego();
     }, [])
 
-    const URLImg = "https://festupload.s3.amazonaws.com/";
     //bg-light
   return (
     <div className='fullContentAluguel'>
@@ -70,7 +69,7 @@ export default function Exe() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -89,7 +88,7 @@ export default function Exe() {
             {aluguel?.map((p)=>(
                 <div className='cardAluguelnew' key={p?._id}>
                     <div className="imagemAluguelSection">
-                    <img className="imgAluguelCArdAdd" src={URLImg + p.photo1} alt="" />
+                    <img className="imgAluguelCArdAdd" src={p.photo1} alt="" />
                     </div>
                     <div className="descritionAluguelSetion">
                         <i className="aluguelI">{p.cep.localidade}</i>

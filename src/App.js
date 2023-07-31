@@ -29,6 +29,9 @@ import ConfirmEmailPage from './pages/ConfirmEmailPage/ConfirmEmailPage';
 import SendEmailConfirm from './pages/ConfirmEmailPage/SendEmailConfirm';
 import Monitor from './pages/Monitor/Monitor';
 import PageSingVenda from './pages/pageSingVenda/PageSingVenda';
+import PageSingleEditVenda from './pages/PageSingleEditVenda/PageSingleEditVenda';
+import PageSingleDoacao from './pages/PageSingleDoacao/PageSingleDoacao';
+import PageSingleEditDoacao from './pages/PageSingleEditDoacao/PageSingleEditDoacao';
 
 function App() {
 
@@ -64,6 +67,9 @@ function App() {
           <Route path="/registrar" element={<Registrar />} exact />
           <Route path="/monitor" element={<Monitor />} exact />
           <Route path="/monitor-venda/:id" element={<PageSingVenda />} exact />
+          <Route path="/monitor-vendaedit/:id" element={<PageSingleEditVenda />} exact />
+          <Route path="/monitor-doacao/:id" element={<PageSingleDoacao />} exact />
+          <Route path="/monitor-doacaoedit/:id" element={<PageSingleEditDoacao />} exact />
           <Route path="/registrar/termos-politicas" element={<Termos />} exact />
           <Route path="/registrar/send-confirm-email-to-register-accont" element={<SendEmailConfirm />} exact />
         </Routes>

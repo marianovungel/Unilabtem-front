@@ -7,7 +7,6 @@ import api from '../../services/api'
 import upload from '../../services/upload'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
-const URLImg = "https://festupload.s3.amazonaws.com/";
 
 
 //upload img
@@ -16,8 +15,9 @@ async function postImage({image, description}) {
   formData.append("image", image)
   formData.append("description", description)
 
-  const result = await upload.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-  return result.data
+  const result = await upload.post('/upload/upload', formData, { headers: {'Content-Type': 'multipart/form-data'}})
+  console.log(result.data.url)
+  return result.data.url;
 }
 
 export default function Desapego() {
@@ -91,7 +91,7 @@ export default function Desapego() {
         const description = Date.now() + file.name;
         const result = await postImage({image: file, description})
         console.log(result)
-        newPost.photo = result.imagePath.split("/")[2];
+        newPost.photo = result;
         
         
       }catch(err){}
@@ -272,7 +272,7 @@ export default function Desapego() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -330,7 +330,7 @@ export default function Desapego() {
 
               <textarea className="story" rows="10" cols="33" required onChange={(e)=> setDesc(e.target.value)} ></textarea>
               {girar ? (
-                <button className='inputProduto colorbutton' type='submit'> <i class="fa-solid fa-spinner girar"></i> </button>
+                <button className='inputProduto colorbutton' type='submit'> <i className="fa-solid fa-spinner girar"></i> </button>
               ):(
                 <button className='inputProduto colorbutton' type='submit'> Criar </button>
               )}
@@ -358,7 +358,7 @@ export default function Desapego() {
         <div className='descClassName'>
           <span className='descSpan'>{p.desc}</span>
         </div>
-        <div className='divHero'><img id='heroIgm' src={URLImg + p.photo} alt='#'/></div>
+        <div className='divHero'><img id='heroIgm' src={p.photo} alt='#'/></div>
         <div className='divFooter'>
             <span className='spanDate'> {new  Date(p.createdAt).toDateString()} </span>
             <Link to={`/doacao/${p?._id}`}>

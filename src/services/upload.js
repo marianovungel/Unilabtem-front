@@ -1,7 +1,8 @@
 import axios from 'axios'; 
 
 const upload = axios.create({
-    baseURL: 'https://uploadimgu.herokuapp.com/',
+    baseURL: 'https://back-dks9.onrender.com/',
+    // baseURL: 'https://uploadimgu.herokuapp.com/',
     // baseURL: 'https://uploadimgu.herokuapp.com/',
 });
 

@@ -5,7 +5,6 @@ import {Context} from '../../Context/Context'
 import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2';
 import { Avatar, Chip } from '@mui/material'
-const URLImg = "https://festupload.s3.amazonaws.com/";
 
 export default function Menu() {
 
@@ -68,7 +67,7 @@ export default function Menu() {
               <Link to='/user' >
                   <Chip
                   id='colorandPoiter'
-                    avatar={<Avatar alt="Natacha" src={URLImg +user.profilePic} />}
+                    avatar={<Avatar alt="Natacha" src={user.profilePic} />}
                     label={user.username}
                     variant="outlined"
                   />
