@@ -1,7 +1,6 @@
 import './UserPerfil.css'
 import {useContext} from 'react'
 import {Context} from '../../Context/Context'
-const URLImg = "https://festupload.s3.amazonaws.com/";
 
 export default function UserPerfil() {
 
@@ -14,7 +13,7 @@ export default function UserPerfil() {
                 <div className=" use imgUser">
                     <i className="Iselect photoUser">Foto de Perfil</i>
                     <img 
-                        src={URLImg +user.profilePic} 
+                        src={user.profilePic} 
                         alt="" className="photoUserI" 
                     />
                 </div>

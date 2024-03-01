@@ -6,6 +6,7 @@ import { Link, useLocation} from 'react-router-dom';
 import api from '../../services/api'
 import { Context } from '../../Context/Context';
 import Swal from 'sweetalert2';
+import Footer from '../../components/Footer/Footer';
 
 
 export default function SingleAluguel() {
@@ -36,7 +37,7 @@ export default function SingleAluguel() {
   }, [path])
 
 const {user} = useContext(Context);
-const URLImg = "https://festupload.s3.amazonaws.com/";
+// const = "https://festupload.s3.amazonaws.com/";
 
 const whatsappSend = () =>{
   const messageZap=`Olá ${post.username}. Gostaria de saber se A casa em compartilhamento  
@@ -179,7 +180,7 @@ const FotoChengFive = ()=>{
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -192,14 +193,14 @@ const FotoChengFive = ()=>{
           <div className='imgContent'>
             <p id='categoria'>Categoria: {post.categories}</p>
             <div className='imgDivSingle'>
-              <img id='photoVendaId' src={URLImg+foto} alt='' />
+              <img id='photoVendaId' src={foto} alt='' />
             </div>
             <div className='imgDivSingleClass'>
-              {post?.photo1  && (<img className='photoVendaclassName' onClick={FotoChengOne} src={URLImg+post.photo1} alt='' />)}
-              {post?.photo2  && (<img className='photoVendaclassName' onClick={FotoChengTwo} src={URLImg+post.photo2} alt='' />)}
-              {post?.photo3  && (<img className='photoVendaclassName' onClick={FotoChengTrei} src={URLImg+post.photo3} alt='' />)}
-              {post?.photo4  && (<img className='photoVendaclassName' onClick={FotoChengFort} src={URLImg+post.photo4} alt='' />)}
-              {post?.photo5  && (<img className='photoVendaclassName' onClick={FotoChengFive} src={URLImg+post.photo5} alt='' />)}
+              {post?.photo1  && (<img className='photoVendaclassName' onClick={FotoChengOne} src={post.photo1} alt='' />)}
+              {post?.photo2  && (<img className='photoVendaclassName' onClick={FotoChengTwo} src={post.photo2} alt='' />)}
+              {post?.photo3  && (<img className='photoVendaclassName' onClick={FotoChengTrei} src={post.photo3} alt='' />)}
+              {post?.photo4  && (<img className='photoVendaclassName' onClick={FotoChengFort} src={post.photo4} alt='' />)}
+              {post?.photo5  && (<img className='photoVendaclassName' onClick={FotoChengFive} src={post.photo5} alt='' />)}
             </div>
             
           </div>
@@ -248,7 +249,9 @@ const FotoChengFive = ()=>{
               <div className='buttonZapDiv'><button onClick={whatsappSend} className='buttonZap'>Enviar Zap <i className="fa-brands fa-whatsapp"></i></button></div>
             )}
           </div>
-          <footer className=''></footer>
+          <div className='FooterContainerFix'>
+              <Footer />
+          </div>
         </div>
     </div>
   )

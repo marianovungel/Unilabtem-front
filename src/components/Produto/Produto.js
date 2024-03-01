@@ -61,7 +61,7 @@ export default function Produto() {
 
 
   return (
-    <>
+    <div className='fullFullCardf'>
         <form onSubmit={submitSearch} className='searchform'>
           <input className='searchformInportt' type="search" placeholder='Pesquise...' onChange={e => setTitle(e.target.value)} />
           <button type="submit" className='searchformButton'><i className="fa-solid fa-magnifying-glass colorSearch"></i></button>
@@ -69,20 +69,30 @@ export default function Produto() {
       {vazio && (<div className='Encontrar'><h5>Nenhum Produto encontrado ...</h5></div>)}
       {carregar && (<div className='Encontrar'><h5>Carregando ...</h5></div>)}
 
-        {produtoVenda?.map((post)=>(
-          <Link className="titleColor" to={`/post/${post?._id}`} key={post._id}>
-            {/* onClick={() => history.push(`/post/${post?.id}`, post)}  key={post?.photo} */}
-          <div className="Produto" key={post?.photo}>
-            <div className='imgProduto' id='Produto'>
-                <img className='imagemCard' src={post?.photo} alt=' '/>
-            </div>
-            <div className='nomePreco'>
-                <h3 className='valorNome'>{post?.title}</h3>
-                <h3 className='valorNome'>R$ {post?.preco},00</h3> 
-            </div>
+    <div className='fullFullCard'>
+      <div className='centerCardFFF'>
+        {produtoVenda?.map((p)=>(
+          <div className='cardAluguelnewVendaNova' key={p?._id}>
+              <div className="imagemAluguelSectionNeww">
+              <img className="imgAluguelCArdAddw" src={p.photo} alt="" />
+              </div>
+              <div className="descritionAluguelSetionw">
+                  {/* <i className="aluguelI">{p.cep.localidade}</i> */}
+                  <h3 className="hpraceAluguel">{p.title}</h3>
+                  <div className='CardVendaNewWay'>
+                    <p className="pdescriçãoAluguel">R${p.preco},00</p>
+                    <i className='AvendaColor'>A venda</i>
+                  </div>
+              </div>
+              <div className="buttonAluguelSectionw">
+              <Link to={`/post/${p?._id}`}><button className="buttonAluguelInfoCardw">Info...</button></Link>
+              </div>
           </div>
-          </Link>
-          ))}
-    </>
+        ))}
+
+      </div>
+    
+    </div>
+    </div>
   );
 }

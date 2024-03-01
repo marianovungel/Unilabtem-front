@@ -7,6 +7,7 @@ import api from '../../services/api'
 import Header from '../../components/Header/Header'
 import { useContext } from 'react'
 import { Context } from '../../Context/Context'
+import Footer from '../../components/Footer/Footer'
 
 export default function Exe() {
 
@@ -101,6 +102,9 @@ export default function Exe() {
                     </div>
                 </div>
             ))}
+    </div>
+    <div className='FooterContainerFix'>
+        <Footer />
     </div>
     </div>
   )

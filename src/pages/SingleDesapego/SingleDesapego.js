@@ -6,6 +6,7 @@ import { Link, useLocation} from 'react-router-dom';
 import api from '../../services/api'
 import { Context } from '../../Context/Context';
 import Swal from 'sweetalert2';
+import Footer from '../../components/Footer/Footer';
 
 
 export default function SingleVenda() {
@@ -31,7 +32,7 @@ export default function SingleVenda() {
   }, [path])
 
 const {user} = useContext(Context);
-const URLImg = "https://festupload.s3.amazonaws.com/";
+// const URLImg = "https://festupload.s3.amazonaws.com/";
 
 const whatsappSend = () =>{
   const messageZap=`Olá ${post.username}. Gostaria de saber se o produto ${post.title} 
@@ -189,7 +190,7 @@ const TodosPro = ()=>{
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -202,7 +203,7 @@ const TodosPro = ()=>{
           <div className='imgContent'>
             <p id='categoria'>Categoria: {post.categories}</p>
             <div className='imgDivSingle'>
-              <img id='photoVendaId' src={URLImg+post.photo} alt='#' />
+              <img id='photoVendaId' src={post.photo} alt='#' />
             </div>
             
           </div>
@@ -247,7 +248,9 @@ const TodosPro = ()=>{
               )}
             </div>
           )}
-          <footer className=''></footer>
+          <div className='FooterContainerFix'>
+              <Footer />
+          </div>
         </div>
     </div>
   )

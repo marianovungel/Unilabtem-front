@@ -6,6 +6,7 @@ import { Link, useLocation} from 'react-router-dom';
 import api from '../../services/api'
 import { Context } from '../../Context/Context';
 import Swal from 'sweetalert2';
+import Footer from '../../components/Footer/Footer';
 
 export default function SingleCompartilhar() {
   const location = useLocation();
@@ -249,7 +250,9 @@ const FotoChengFive = ()=>{
               <div className='buttonZapDiv'><button onClick={whatsappSend} className='buttonZap'>Enviar Zap <i className="fa-brands fa-whatsapp"></i></button></div>
             )}
           </div>
-          <footer className=''></footer>
+          <div className='FooterContainerFix'>
+            <Footer />
+          </div>
         </div>
     </div>
   )

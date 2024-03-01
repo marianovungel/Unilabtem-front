@@ -4,20 +4,35 @@ import Menu from '../../components/Menu/Menu'
 import {useState, useContext, useEffect} from 'react'
 import {Context} from '../../Context/Context'
 import api from '../../services/api'
-import upload from '../../services/upload'
+// import upload from '../../services/upload'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 
+import { imageDb } from '../../services/firebase';
+import { v4 } from 'uuid';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+
+const handleClick = async (URL)=>{
+    try {
+       const imgRef = ref(imageDb, `files/${v4()}`)
+       uploadBytes(imgRef, URL)
+       const snapshot = await uploadBytes(imgRef, URL)
+       const downloadURL = await getDownloadURL(snapshot.ref);
+       return (downloadURL)
+    } catch (error) {
+        console.log(error)
+    }
+}
 //upload img
 async function postImage({image, description}) {
-  const formData = new FormData();
-  formData.append("image", image)
-  formData.append("description", description)
+    const formData = new FormData();
+    formData.append("image", image)
+    formData.append("description", description)
 
-  const result = await upload.post('/upload/upload', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-  console.log(result.data.url)
-  return result.data.url;
+    const result = await handleClick(image)
+    console.log(result)
+  return result;
 }
 
 export default function Desapego() {
@@ -283,7 +298,7 @@ export default function Desapego() {
         </div>
         {/* /////////////////////////////////////--HTML--////////////////////////// */}
         <div className='sidebarDesapego'>
-          {cadastrar ?(
+          {cadastrar ? (
              
               <div className='cadastrarProdutoCallForm'>
                 <div className='buttonCad' onClick={CadastrarTrue}>Cadastrar Doação</div>
@@ -339,36 +354,37 @@ export default function Desapego() {
           )}
 
           {/* ///////////////////////////--center--///////////////////////// */}
-          {scroll && (<div className='sidebarCardDesapego scroll'>
-          <>
-          {/* /////////////////////////////////--pesquisa--//////////////////////////////// */}
-      <form onSubmit={submitSearch} className='searchform' id='searchFormDesapego'>
-          <input className='searchformInportDesapego' type="search" placeholder='Pesquise...' onChange={e => setTitleSearh(e.target.value)} />
-          <button type="submit" className='searchformButton'><i className="fa-solid fa-magnifying-glass colorSearch"></i></button>
-      </form>
-      {vazio && (<div className='Encontrar'><h5>Nenhum Produto encontrado ...</h5></div>)}
-      {carregar && (<div className='Encontrar'><h5>Carregando ...</h5></div>)}
-{/* ///////////////////////////////--card--///////////////////////////// */}
-    {desapego.map((p)=>(
-    <div className='allCard' key={p.photo}>
-        <div className='divHeader'>
-            {/* <img className='imgcircul' src={URLImg + p.photo} alt=''/> */}
-            <p className='SpanUsername'>{ p.username }</p>
-        </div>
-        <div className='descClassName'>
-          <span className='descSpan'>{p.desc}</span>
-        </div>
-        <div className='divHero'><img id='heroIgm' src={p.photo} alt='#'/></div>
-        <div className='divFooter'>
-            <span className='spanDate'> {new  Date(p.createdAt).toDateString()} </span>
-            <Link to={`/doacao/${p?._id}`}>
-              <button className='buttonSaiba'>Saiba Mais</button>
-            </Link>
-        </div>
-    </div>
-    ))}
-          </>
-          </div>
+          {scroll && (
+            <div className='sidebarCardDesapego scroll' key="scrollKey">
+                <>
+                    {/* /////////////////////////////////--pesquisa--//////////////////////////////// */}
+                <form onSubmit={submitSearch} className='searchform' id='searchFormDesapego' key="scrollKey1">
+                    <input className='searchformInportDesapego' type="search" placeholder='Pesquise...' onChange={e => setTitleSearh(e.target.value)} />
+                    <button type="submit" className='searchformButton'><i className="fa-solid fa-magnifying-glass colorSearch"></i></button>
+                </form>
+                {vazio && (<div key="scrollKey2" className='Encontrar'><h5>Nenhum Produto encontrado ...</h5></div>)}
+                {carregar && (<div key="scrollKey3" className='Encontrar'><h5>Carregando ...</h5></div>)}
+                {/* ///////////////////////////////--card--///////////////////////////// */}
+                {desapego.map((p)=>(
+                <div className='allCard' key={p?._id}>
+                    <div className='divHeader'>
+                        {/* <img className='imgcircul' src={URLImg + p.photo} alt=''/> */}
+                        <p className='SpanUsername'>{ p?.username }</p>
+                    </div>
+                    <div className='descClassName'>
+                      <span className='descSpan'>{p?.desc}</span>
+                    </div>
+                    <div className='divHero'><img id='heroIgm' src={p?.photo} alt='#'/></div>
+                    <div className='divFooter'>
+                        <span className='spanDate'> {new  Date(p.createdAt).toDateString()} </span>
+                        <Link to={`/doacao/${p?._id}`}>
+                          <button className='buttonSaiba'>Saiba Mais</button>
+                        </Link>
+                    </div>
+                </div>
+                ))}
+              </>
+            </div>
           )}
           {/* ////////////////////////////////////--sideBar--//////////////////////////// */}
           {side && (
@@ -388,6 +404,7 @@ export default function Desapego() {
           </div>
           )}
         </div>
+        
     </div>
   )
 }

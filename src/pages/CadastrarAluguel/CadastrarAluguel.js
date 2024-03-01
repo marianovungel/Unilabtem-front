@@ -3,20 +3,35 @@ import Menu from '../../components/Menu/Menu'
 import './CadastrarAluguel.css'
 import {useState, useContext} from 'react'
 import {Context} from '../../Context/Context'
-import upload from '../../services/upload'
+// import upload from '../../services/upload'
 import api from '../../services/api'
 import { Link } from 'react-router-dom'
 
+import { imageDb } from '../../services/firebase';
+import { v4 } from 'uuid';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+
+const handleClick = async (URL)=>{
+    try {
+       const imgRef = ref(imageDb, `files/${v4()}`)
+       uploadBytes(imgRef, URL)
+       const snapshot = await uploadBytes(imgRef, URL)
+       const downloadURL = await getDownloadURL(snapshot.ref);
+       return (downloadURL)
+    } catch (error) {
+        console.log(error)
+    }
+}
 //upload img
 async function postImage({image, description}) {
     const formData = new FormData();
     formData.append("image", image)
     formData.append("description", description)
-  
-    const result = await upload.post('/upload/upload', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-    console.log(result.data.url)
-    return result.data.url;
-  }
+
+    const result = await handleClick(image)
+    console.log(result)
+  return result;
+}
 
 export default function CadastrarAluguel() {
 

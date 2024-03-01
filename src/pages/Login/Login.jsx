@@ -35,9 +35,16 @@ export default function Login() {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
             })
-            dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
-            window.location.replace("/");
-        }catch(err){
+            console.log(res.data)
+            if(res.data === true){
+                alert("Usuário não cadastrado!")
+                window.location.replace("/");
+            }else{
+                console.log("Usuário Logado!")
+                dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
+                window.location.replace("/");
+            }
+        }catch(error){
             dispatch({ type: "LOGIN_FAILURE"})
             CheckSenhaAgain()
         }
@@ -55,6 +62,7 @@ export default function Login() {
             const res = await api.post("/usersig/login/", {
                 sigToken: body.data.access_token
             })
+            console.log(res)
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
             window.location.replace("/");
         }catch(err){

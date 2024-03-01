@@ -10,7 +10,6 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useContext } from 'react'
 import { Context } from '../../Context/Context'
-const URLImg = "https://festupload.s3.amazonaws.com/";
 
 export default function UserPage() {
     //var
@@ -88,7 +87,7 @@ export default function UserPage() {
                 </li>
                 <li className="nav-item dropdown">
                 <Link className="nav-link dropdown-toggle text-light" to="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                    {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                     (<i>Usuário</i>)}
                 </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

@@ -7,6 +7,7 @@ import { Link, useLocation} from 'react-router-dom';
 import api from '../../services/api'
 import { Context } from '../../Context/Context';
 import Swal from 'sweetalert2';
+import Footer from '../../components/Footer/Footer';
 // import { Link } from 'react-router-dom';
 
 
@@ -270,7 +271,9 @@ const TodosPro = ()=>{
               )}
             </div>
           )}
-          <footer className=''></footer>
+          <div className='FooterContainerFix'>
+          <Footer />
+        </div>
         </div>
     </div>
   )

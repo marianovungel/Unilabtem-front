@@ -7,7 +7,8 @@ import api from '../../services/api'
 import HeaderCompart from '../../components/HeaderCompart/HeaderCompart'
 import { useContext } from 'react'
 import { Context } from '../../Context/Context'
-const URLImg = "https://festupload.s3.amazonaws.com/";
+import Footer from '../../components/Footer/Footer'
+
 
 export default function Compartilhar() {
 
@@ -67,7 +68,7 @@ export default function Compartilhar() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -85,7 +86,7 @@ export default function Compartilhar() {
             {compartilhar?.map((p)=>(
                 <div className='cardAluguelnew' key={p?._id}>
                     <div className="imagemAluguelSection">
-                    <img className="imgAluguelCArdAdd" src={URLImg + p.photo1} alt="" />
+                    <img className="imgAluguelCArdAdd" src={p.photo1} alt="" />
                     </div>
                     <div className="descritionAluguelSetion">
                         <i className="aluguelI">{p.cep.localidade}</i>
@@ -99,6 +100,9 @@ export default function Compartilhar() {
                 </div>
             ))}
     </div>
+    </div>
+    <div className='FooterContainerFix'>
+        <Footer />
     </div>
     </div>
   )

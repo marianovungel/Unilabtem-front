@@ -3,6 +3,7 @@ import './PageSingVenda.css'
 import api from '../../services/api'
 import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Footer from '../../components/Footer/Footer';
 
 
 export default function PageSingVenda() {
@@ -106,7 +107,9 @@ export default function PageSingVenda() {
                     <div></div>
                     <div className='buttonZapDiv'><button  className='buttonDeletar' onClick={Reprovar} >Reprovar <i className="fa-solid fa-thumbs-down"></i></button></div>
                 </div>
-            <footer className=''></footer>
+                <div className='FooterContainerFix'>
+                    <Footer />
+                </div>
             </div>
         </div>
         </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import {useContext} from 'react'
 import {Context} from '../../Context/Context'
 import Menu from '../../components/Menu/Menu';
-const URLImg = "https://festupload.s3.amazonaws.com/";
+import Footer from '../../components/Footer/Footer'
 
 export default function NewSobre() {
 
@@ -62,7 +62,7 @@ export default function NewSobre() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -138,8 +138,9 @@ export default function NewSobre() {
                     </div>
                 </section>
             </div>
-          
-          
+        </div>
+        <div className='FooterContainerFix'>
+            <Footer />
         </div>
     </div>
   )

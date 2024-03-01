@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Menu from '../../components/Menu/Menu';
 import {useContext} from 'react'
 import {Context} from '../../Context/Context'
+import Footer from '../../components/Footer/Footer';
 const URLImg = "https://festupload.s3.amazonaws.com/";
 
 
@@ -231,6 +232,9 @@ export default function Vida() {
             </div>
           
           
+        </div>
+        <div className='FooterContainerFix'>
+            <Footer />
         </div>
     </div>
   )

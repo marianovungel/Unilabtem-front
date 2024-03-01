@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import api from '../../services/api'
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 
 export default function Aluguel() {
 
@@ -48,6 +49,9 @@ export default function Aluguel() {
                 </div>
             </div>
             ))}
+        </div>
+        <div className='FooterContainerFix'>
+          <Footer />
         </div>
     </div>
   )

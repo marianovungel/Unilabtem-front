@@ -3,20 +3,35 @@ import Menu from '../../components/Menu/Menu'
 import './CadastrarCompartilhar.css'
 import {useState, useContext} from 'react'
 import {Context} from '../../Context/Context'
-import upload from '../../services/upload'
+// import upload from '../../services/upload'
 import api from '../../services/api'
 import { Link } from 'react-router-dom'
-const URLImg = "https://festupload.s3.amazonaws.com/";
 
+import { imageDb } from '../../services/firebase';
+import { v4 } from 'uuid';
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+
+const handleClick = async (URL)=>{
+    try {
+       const imgRef = ref(imageDb, `files/${v4()}`)
+       uploadBytes(imgRef, URL)
+       const snapshot = await uploadBytes(imgRef, URL)
+       const downloadURL = await getDownloadURL(snapshot.ref);
+       return (downloadURL)
+    } catch (error) {
+        console.log(error)
+    }
+}
 //upload img
 async function postImage({image, description}) {
     const formData = new FormData();
     formData.append("image", image)
     formData.append("description", description)
-  
-    const result = await upload.post('/images', formData, { headers: {'Content-Type': 'multipart/form-data'}})
-    return result.data
-  }
+
+    const result = await handleClick(image)
+    console.log(result)
+  return result;
+}
 
 export default function CadastrarCompartilhar() {
 
@@ -176,7 +191,7 @@ export default function CadastrarCompartilhar() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
@@ -255,7 +270,6 @@ export default function CadastrarCompartilhar() {
                     <div className='precoType'>
                         <input type='number' placeholder='Nº Cozinha' required className='precoTypeInput' onChange={(e)=> setCozinha(e.target.value)}/>
                         <input type='number' placeholder='Nº Banheiro' required className='precoTypeInput' onChange={(e)=> setBanheiro(e.target.value)}/>
-                        
                         
                     </div>
                     <div className='precoType'>
