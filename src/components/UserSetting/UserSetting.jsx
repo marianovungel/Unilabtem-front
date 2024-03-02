@@ -64,6 +64,7 @@ export default function UserSetting() {
             email: email,
             userId: user._id,
           };
+          console.log(newPost)
           if(photo){
             try{
               const description = Date.now() + photo.name;
@@ -71,30 +72,43 @@ export default function UserSetting() {
               newPost.profilePic = result
             }catch(err){}
           }
-          try{
-            const userUpdate = await api.put(`/users/${user._id}`, newPost)
-            await dispatch({ type: "UPDATE_SUCCESS", payload: userUpdate.data.updateUser})
-            const Toast = Swal.mixin({
-              toast: true,
-              position: 'top-end',
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-              }
-            })
+
+          if(user.sig === false){
+            try{
+              const userUpdate = await api.put(`/users/${user._id}`, newPost)
+              await dispatch({ type: "UPDATE_SUCCESS", payload: userUpdate.data.updateUser})
+            }catch(err){
+              dispatch({ type: "UPDATE_FAILURE"})
+              alert(err)
+            }
             
-            Toast.fire({
-              icon: 'success',
-              title: 'Atualizado com sucesso!'
-            })
-            window.location.replace("/user");
-          }catch(err){
-            dispatch({ type: "UPDATE_FAILURE"})
-            alert(err)
+          }else{
+            try{
+              const userUpdate = await api.put(`/usersig/${user._id}`, newPost)
+              await dispatch({ type: "UPDATE_SUCCESS", payload: userUpdate.data.updateUser})
+            }catch(err){
+              dispatch({ type: "UPDATE_FAILURE"})
+              alert(err)
+            }
           }
+
+              const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: 'Atualizado com sucesso!'
+              })
+              // window.location.replace("/user");
     }
 
   return (
