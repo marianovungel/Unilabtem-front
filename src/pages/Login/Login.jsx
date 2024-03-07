@@ -17,6 +17,7 @@ export default function Login() {
     const [system, setSystem] = useState("loginSystem")
     const [sig, setSig] = useState("loginNull")
     const [call, setCall] = useState(true)
+    const [loading, setLoading] = useState(false)
     var checkValid = false;
 
     useEffect(()=>{
@@ -24,10 +25,12 @@ export default function Login() {
         setSystem("loginSystem")
         setSig("loginNull")
         setCall(true)
+        setLoading(false)
     }, [])
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
+        setLoading(true)
         dispatch({ type: "LOGIN_START"})
         setFalsesenha(false)
         try{
@@ -45,6 +48,7 @@ export default function Login() {
                 window.location.replace("/");
             }
         }catch(error){
+            setLoading(false)
             dispatch({ type: "LOGIN_FAILURE"})
             CheckSenhaAgain()
         }
@@ -52,6 +56,7 @@ export default function Login() {
 
     const henleSig = async(e)=>{
         e.preventDefault();
+        setLoading(true)
         dispatch({ type: "LOGIN_START"})
         setFalsesenha(false)
         try{
@@ -66,6 +71,7 @@ export default function Login() {
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
             window.location.replace("/");
         }catch(err){
+            setLoading(false)
             setAlesig(true)
             dispatch({ type: "LOGIN_FAILURE"})
         }
@@ -127,7 +133,11 @@ export default function Login() {
                 </div>
                 <input type="text" className="fastInputLogin inLogin" placeholder="Usuário..." ref={userRef} minLength="2" onBlur={chackUser} required />
                 <input type="password" className="fastInputLogin inLogin" placeholder="Senha..." minLength='4' ref={passwordRef} required />
-                <button className="buttonEntr fastInputLogin" type='submit' disabled={isFetching}>Entrar</button>
+                
+                {loading ? 
+                    (<button className="buttonEntr fastInputLogin" disabled={isFetching}><i className="fa-solid fa-spinner girar"></i></button>)
+                    :(<button className="buttonEntr fastInputLogin" type='submit'>Entrar</button>)
+                }
                 {ale && <i className='checkuserRegisterAlertLogin'>Usuário sem conta. Crie uma conta!</i>}
                 {falsesenha && <i className='checkuserRegisterAlertLogin'>Senha inválida...</i>}
                 <div className="criarNovaContaButtonLoginNew">
@@ -143,7 +153,10 @@ export default function Login() {
                 </div>
                 <input type="text" className="fastInputLogin inLogin" placeholder="Usuário..." ref={userRef} minLength="2" required />
                 <input type="password" className="fastInputLogin inLogin" placeholder="Senha..." minLength='4' ref={passwordRef} required />
-                <button className="buttonEntr fastInputLogin" type='submit' disabled={isFetching}>Entrar</button>
+                {loading ? 
+                    (<button className="buttonEntr fastInputLogin" disabled={isFetching}><i className="fa-solid fa-spinner girar"></i></button>)
+                    :(<button className="buttonEntr fastInputLogin" type='submit'>Entrar</button>)
+                }
                 {alesig && <i className='checkuserRegisterAlertLogin'>Dados incorretos!</i>}
                 <div className="criarNovaContaButtonLoginNew">
                     <small className="criarContaLoginNew"><Link to='/registrar' id='colorLinkLoginNew'>Criar conta</Link></small>

@@ -7,21 +7,31 @@ import api from '../../services/api'
 import './Monitor.css'
 import DoacaoMonitor from '../../components/DoacaoMonitor/DoacaoMonitor'
 import DoacaoEditMonitor from '../../components/DoacaoEditMonitor/DoacaoEditMonitor'
+import AluguelPost from '../../components/AluguelPost/AluguelPost'
 
 export default function Monitor() {
     const [menumonitor, setMenumonitor] = useState(true)
     const [postvendam, setPostvendam] = useState(false)
     const [edvenda, setEdvenda] = useState(false)
+    const [postaluguel, setPostaluguel] = useState(false)
     const [postdoacao, setPostdoacao] = useState(false)
     const [editpostdoacao, setEditpostdoacao] = useState(false)
     const [vendapn, setVendapn] = useState(0)
 
 
+    const setAlluguel = ()=>{
+        setMenumonitor(false)
+        setPostdoacao(false)
+        setEditpostdoacao(false)
+        setPostvendam(false)
+        setPostaluguel(true)
+    }
     const setVenda = ()=>{
         setMenumonitor(false)
         setPostdoacao(false)
         setEditpostdoacao(false)
         setPostvendam(true)
+        setPostaluguel(false)
     }
     const setEdVenda = ()=>{
         setMenumonitor(false)
@@ -29,6 +39,7 @@ export default function Monitor() {
         setPostdoacao(false)
         setPostvendam(false)
         setEdvenda(true)
+        setPostaluguel(false)
     }
     const setDoacao = ()=>{
         setMenumonitor(false)
@@ -36,6 +47,7 @@ export default function Monitor() {
         setPostdoacao(true)
         setPostvendam(false)
         setEdvenda(false)
+        setPostaluguel(false)
     }
     const setEditDoacao = ()=>{
         setMenumonitor(false)
@@ -43,6 +55,7 @@ export default function Monitor() {
         setPostdoacao(false)
         setPostvendam(false)
         setEdvenda(false)
+        setPostaluguel(false)
     }
 
     const calcularVenda = async ()=>{
@@ -109,7 +122,7 @@ export default function Monitor() {
                             desejam <b className='editarAmarelo'>EDITAR</b> (a espera de aprovação).
                         </p>
                     </div>
-                    <div className="cardMonitor">
+                    <div className="cardMonitor" onClick={setAlluguel}>
                         <h4 className="titleCardMonitor">Postar Aluguel</h4>
                         <p className="textMonitor">
                             Neste Carde tem as casas que 
@@ -147,6 +160,7 @@ export default function Monitor() {
                 {edvenda && (<VendaEditMonitor /> )}
                 {postdoacao && (<DoacaoMonitor />)}
                 {editpostdoacao && (<DoacaoEditMonitor />)}
+                {postaluguel && (<AluguelPost />)}
                 
             </div>
         </div>

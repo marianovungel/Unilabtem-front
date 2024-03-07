@@ -145,10 +145,10 @@ export default function EditAluguel() {
               const description = Date.now() + file5.name;
               const result = await postImage({image: file5, description})
               newPost.photo5 = result.imagePath.split("/")[2];
-              
-              
             }catch(err){}
           }
+
+          console.log("Estou tentar")
         try{
             await api.put(`/aluguel/${path}`, newPost)
             Swal.fire({

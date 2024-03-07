@@ -55,10 +55,11 @@ export default function CadastrarAluguel() {
     const [desc, setDesc] = useState("")
     const [alertImg, setAlertImg] = useState(false)
     const [pfile1, setPfile1] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e)=>{
         e.preventDefault()
-    
+        setLoading(true)
         const newPost = {
           username: user.username,
           userwhatsapp: user.whatsapp,
@@ -129,7 +130,9 @@ export default function CadastrarAluguel() {
           }else{
             setAlertImg(true)
           }
-        }catch(err){}
+        }catch(err){
+          setLoading(false)
+        }
       }
 
 
@@ -277,7 +280,10 @@ export default function CadastrarAluguel() {
                         <textarea className='forNewDesc' placeholder='Descreve a casa em poucas palavras....' maxLength='200' onChange={(e)=> setDesc(e.target.value)}></textarea>
                     </div>
                     <div className='precoType'>
-                        <button type='submit' disabled={isFetching} onClick={setImg} className='CadastrarcasaEmAluguel'>Cadastrar Aluguel</button>
+                    {loading ? 
+                        (<button disabled={isFetching} className='CadastrarcasaEmAluguel'><i className="fa-solid fa-spinner girar"></i></button>)
+                        :(<button type='submit' onClick={setImg} className='CadastrarcasaEmAluguel'>Cadastrar Aluguel</button>)
+                    }
                     </div>
                 </div>
             </form>

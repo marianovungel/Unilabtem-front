@@ -38,11 +38,10 @@ export default function UserSetting() {
     const [name, setName]= useState(" ")
     const [email, setEmail]= useState(" ")
     const [whatsapp, setWhatsapp]= useState(" ")
+    const [loading, setLoading] = useState(false)
 
     const { user } = useContext(Context)
     const {isFetching, dispatch } = useContext(Context)
-
-    console.log(user.sig)
 
     useEffect(()=>{
       const GetUser = async ()=>{
@@ -52,11 +51,13 @@ export default function UserSetting() {
         setEmail(yourUser.data.email)
         setWhatsapp(yourUser.data.whatsapp)
       }
+      setLoading(false)
       GetUser()
     }, [user._id])
 
     const Update = async (e)=>{
         e.preventDefault()
+        setLoading(true)
         dispatch({ type: "UPDATE_START"})
         const newPost = {
             username: name,
@@ -79,6 +80,7 @@ export default function UserSetting() {
               await dispatch({ type: "UPDATE_SUCCESS", payload: userUpdate.data.updateUser})
             }catch(err){
               dispatch({ type: "UPDATE_FAILURE"})
+              setLoading(false)
               alert(err)
             }
             
@@ -88,6 +90,7 @@ export default function UserSetting() {
               await dispatch({ type: "UPDATE_SUCCESS", payload: userUpdate.data.updateUser})
             }catch(err){
               dispatch({ type: "UPDATE_FAILURE"})
+              setLoading(false)
               alert(err)
             }
           }
@@ -147,7 +150,11 @@ export default function UserSetting() {
                         <input type="file" id='imgUserPhoto' accept="image/*" className="inputImgUser userInputB Bselect displayNone" onChange={(e)=> setPhoto(e.target.files[0])}  />
                     </div>
                     <div className=" use e-mailUser">
-                        <button type='submit' disabled={isFetching} className="entrarbutton inputImgUser userInputB Bselect ButtonBackgrondcolor">Salvar Alteração</button>
+                        {loading ?
+                          (<button disabled={isFetching} className="entrarbutton inputImgUser userInputB Bselect ButtonBackgrondcolor"><i className="fa-solid fa-spinner girar"></i></button>)
+                          :
+                          (<button type='submit'  className="entrarbutton inputImgUser userInputB Bselect ButtonBackgrondcolor">Salvar Alteração</button>)
+                        }
                     </div>
                 </div>
             </div>
