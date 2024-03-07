@@ -399,7 +399,7 @@ export default function Desapego() {
             </div>
           <div className='bannerDesapegoFast'>
               <h3 className='h3Desapego2'>Doação</h3>
-              <p className='bannerDesapegoPp'>Doe aqui, desde bens alimentares até bens do outra natureza!</p>
+              <p className='bannerDesapegoPp'>Doe aqui, desde bens alimentares e outros tipos de bens!</p>
           </div>
           </div>
           )}

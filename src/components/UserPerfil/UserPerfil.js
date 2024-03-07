@@ -31,7 +31,7 @@ export default function UserPerfil() {
                         <b className="Bselect EmailUserB">{user.email}</b>
                     </div>
                     <div className="use datacriacao">
-                        <i className="Iselect dataUserI">Dsta de Criação da conta</i>
+                        <i className="Iselect dataUserI">Data de Criação da conta</i>
                         <b className="Bselect dataB">{new  Date(user.createdAt).toDateString()}</b>
                     </div>
                 </div>

@@ -42,7 +42,7 @@ export default function UserSetting() {
     const { user } = useContext(Context)
     const {isFetching, dispatch } = useContext(Context)
 
-    console.log(user)
+    console.log(user.sig)
 
     useEffect(()=>{
       const GetUser = async ()=>{
@@ -108,7 +108,7 @@ export default function UserSetting() {
                 icon: 'success',
                 title: 'Atualizado com sucesso!'
               })
-              // window.location.replace("/user");
+              window.location.replace("/user");
     }
 
   return (
@@ -129,10 +129,11 @@ export default function UserSetting() {
                     </label>
                 </div>
                 <div className="expretionData">
-                    <div className=" use userNameUser">
+                    {!user.sig && (<div className=" use userNameUser">
                         <i className="Iselect userNameOfUser">Nome de Usuário</i>
                         <input type="text" className="userInputB Bselect inputbBortder"  value={name} onChange={(e)=> setName(e.target.value)} />
                     </div>
+                    )}
                     <div className=" use zapUser">
                         <i className="Iselect zapUserI">Whatsapp...</i>
                         <input type="text" className="userInputB Bselect inputbBortder"  value={whatsapp} onChange={(e)=> setWhatsapp(e.target.value)} />

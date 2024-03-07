@@ -138,8 +138,8 @@ export default function Login() {
             : (
                 <form className="formLoginLogin" onSubmit={henleSig}>
                 <div className="menuSettLogin">
-                    <div className={system} onClick={setCallSystem}><span className="itemSpan">Sistema</span></div>
-                    <div className={sig} onClick={setCallSig}><span className="itemSpan">Sig</span></div>
+                    <div className={system} onClick={setCallSystem}><span className="itemSpan">Usuário Externo</span></div>
+                    <div className={sig} onClick={setCallSig}><span className="itemSpan">Sigaa Unilab</span></div>
                 </div>
                 <input type="text" className="fastInputLogin inLogin" placeholder="Usuário..." ref={userRef} minLength="2" required />
                 <input type="password" className="fastInputLogin inLogin" placeholder="Senha..." minLength='4' ref={passwordRef} required />
