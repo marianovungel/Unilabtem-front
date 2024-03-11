@@ -86,41 +86,44 @@ export default function CadastrarCompartilhar() {
           try{
             const description = Date.now() + file1.name;
             const result = await postImage({image: file1, description})
-            newPost.photo1 = result.imagePath.split("/")[2];
+            newPost.photo1 = result;
           }catch(err){}
         }
         if(file2){
           try{
             const description = Date.now() + file2.name;
             const result = await postImage({image: file2, description})
-            newPost.photo2 = result.imagePath.split("/")[2];
+            newPost.photo2 = result;
           }catch(err){}
         }
         if(file3){
             try{
               const description = Date.now() + file3.name;
               const result = await postImage({image: file3, description})
-              newPost.photo3 = result.imagePath.split("/")[2];
+              newPost.photo3 = result;
             }catch(err){}
           }
           if(file4){
             try{
               const description = Date.now() + file4.name;
               const result = await postImage({image: file4, description})
-              newPost.photo4 = result.imagePath.split("/")[2];
+              newPost.photo4 = result;
             }catch(err){}
           }
           if(file5){
             try{
               const description = Date.now() + file5.name;
               const result = await postImage({image: file5, description})
-              newPost.photo5 = result.imagePath.split("/")[2];
+              newPost.photo5 = result;
             }catch(err){}
           }
         try{
-            await api.post("/compartilhar", newPost);
+
+          console.log(newPost)
+            const respostaa = await api.post("/compartilhar", newPost);
+            console.log(respostaa)
             SetAddPhoto(false)
-            window.location.replace("/habitacao-compartilhar");
+            // window.location.replace("/habitacao-compartilhar");
         }catch(err){}
       }
 

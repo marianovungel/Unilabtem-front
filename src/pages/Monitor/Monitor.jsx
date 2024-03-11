@@ -8,49 +8,81 @@ import './Monitor.css'
 import DoacaoMonitor from '../../components/DoacaoMonitor/DoacaoMonitor'
 import DoacaoEditMonitor from '../../components/DoacaoEditMonitor/DoacaoEditMonitor'
 import AluguelPost from '../../components/AluguelPost/AluguelPost'
+import CompartPost from '../../components/CompartPost/CompartPost'
+import AluguelEditMonitor from '../../components/AluguelEditMonitor/AluguelEditMonitor'
 
 export default function Monitor() {
     const [menumonitor, setMenumonitor] = useState(true)
     const [postvendam, setPostvendam] = useState(false)
     const [edvenda, setEdvenda] = useState(false)
     const [postaluguel, setPostaluguel] = useState(false)
+    const [postcompart, setPostcompart] = useState(false)
     const [postdoacao, setPostdoacao] = useState(false)
     const [editpostdoacao, setEditpostdoacao] = useState(false)
+    const [editpostaluguel, setEditpostaluguel] = useState(false)
     const [vendapn, setVendapn] = useState(0)
 
 
+    const setEditAluguelFunc = ()=>{
+        setMenumonitor(false)
+        setPostdoacao(false)
+        setEditpostdoacao(false)
+        setPostvendam(false)
+        setPostaluguel(false)
+        setPostcompart(false)
+        setEditpostaluguel(true)
+    }
+    const setCompartt = ()=>{
+        setMenumonitor(false)
+        setPostdoacao(false)
+        setEditpostdoacao(false)
+        setPostvendam(false)
+        setPostaluguel(false)
+        setEditpostaluguel(false)
+        setPostcompart(true)
+    }
     const setAlluguel = ()=>{
+        setEditpostaluguel(false)
         setMenumonitor(false)
         setPostdoacao(false)
         setEditpostdoacao(false)
         setPostvendam(false)
         setPostaluguel(true)
+        setPostcompart(false)
     }
     const setVenda = ()=>{
+        setEditpostaluguel(false)
         setMenumonitor(false)
         setPostdoacao(false)
         setEditpostdoacao(false)
         setPostvendam(true)
         setPostaluguel(false)
+        setPostcompart(false)
     }
     const setEdVenda = ()=>{
+        setEditpostaluguel(false)
         setMenumonitor(false)
         setEditpostdoacao(false)
         setPostdoacao(false)
         setPostvendam(false)
         setEdvenda(true)
         setPostaluguel(false)
+        setPostcompart(false)
     }
     const setDoacao = ()=>{
+        setEditpostaluguel(false)
         setMenumonitor(false)
         setEditpostdoacao(false)
         setPostdoacao(true)
         setPostvendam(false)
         setEdvenda(false)
         setPostaluguel(false)
+        setPostcompart(false)
     }
     const setEditDoacao = ()=>{
+        setEditpostaluguel(false)
         setMenumonitor(false)
+        setPostcompart(false)
         setEditpostdoacao(true)
         setPostdoacao(false)
         setPostvendam(false)
@@ -130,7 +162,7 @@ export default function Monitor() {
                             desejam <b className='verdeDivulgar'>DIVULGAR</b> (a espera de aprovação).
                         </p>
                     </div>
-                    <div className="cardMonitor">
+                    <div className="cardMonitor" onClick={setEditAluguelFunc}>
                         <h4 className="titleCardMonitor">Editar Aluguel</h4>
                         <p className="textMonitor">
                             Neste Carde tem as casas que 
@@ -138,7 +170,7 @@ export default function Monitor() {
                             desejam <b className='editarAmarelo'>EDITAR</b> (a espera de aprovação).
                         </p>
                     </div>
-                    <div className="cardMonitor">
+                    <div className="cardMonitor" onClick={setCompartt}>
                         <h4 className="titleCardMonitor">Postar Compartilhamento</h4>
                         <p className="textMonitor">
                             Neste Carde tem as casas que 
@@ -161,6 +193,8 @@ export default function Monitor() {
                 {postdoacao && (<DoacaoMonitor />)}
                 {editpostdoacao && (<DoacaoEditMonitor />)}
                 {postaluguel && (<AluguelPost />)}
+                {postcompart && (<CompartPost />)}
+                {editpostaluguel && (<AluguelEditMonitor />)}
                 
             </div>
         </div>

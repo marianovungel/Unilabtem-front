@@ -33,6 +33,7 @@ import PageSingleEditVenda from './pages/PageSingleEditVenda/PageSingleEditVenda
 import PageSingleDoacao from './pages/PageSingleDoacao/PageSingleDoacao';
 import PageSingleEditDoacao from './pages/PageSingleEditDoacao/PageSingleEditDoacao';
 import PageSingleAllguel from './pages/PageSingleAllguel/PageSingleAllguel';
+import PageSingleCompart from './pages/PageSingleCompart/PageSingleCompart';
 
 function App() {
 
@@ -69,6 +70,7 @@ function App() {
           <Route path="/monitor" element={<Monitor />} exact />
           <Route path="/monitor-venda/:id" element={<PageSingVenda />} exact />
           <Route path="/monitor-aluguel/:id" element={<PageSingleAllguel />} exact />
+          <Route path="/monitor-compartilhar/:id" element={<PageSingleCompart />} exact />
           <Route path="/monitor-vendaedit/:id" element={<PageSingleEditVenda />} exact />
           <Route path="/monitor-doacao/:id" element={<PageSingleDoacao />} exact />
           <Route path="/monitor-doacaoedit/:id" element={<PageSingleEditDoacao />} exact />
