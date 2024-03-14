@@ -16,15 +16,15 @@ export default function Login() {
     const [falsesenha, setFalsesenha] = useState(false)
     const [system, setSystem] = useState("loginSystem")
     const [sig, setSig] = useState("loginNull")
-    const [call, setCall] = useState(true)
+    const [call, setCall] = useState(false)
     const [loading, setLoading] = useState(false)
     var checkValid = false;
 
     useEffect(()=>{
         setAle(false)
-        setSystem("loginSystem")
-        setSig("loginNull")
-        setCall(true)
+        setSystem("loginNullSys")
+        setSig("loginSig")
+        setCall(false)
         setLoading(false)
     }, [])
 

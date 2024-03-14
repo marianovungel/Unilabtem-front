@@ -1,16 +1,40 @@
-// import React, { useEffect, useState } from 'react'
 import './Vida.css'
 import { Link } from 'react-router-dom'
 import Menu from '../../components/Menu/Menu';
 import {useContext} from 'react'
 import {Context} from '../../Context/Context'
 import Footer from '../../components/Footer/Footer';
-const URLImg = "https://festupload.s3.amazonaws.com/";
+// import SlideShow from '../../components/GPT/GPT'
+
+
+// var slides = [
+//     {
+//       _id:"1",
+//     img:"./image/1.png",
+//     title:"CGAD"
+//   },
+//     {
+//       _id:"2",
+//     img:"./image/2.png",
+//     title:"CGAD"
+//   },
+//     {
+//       _id:"3",
+//     img:"./image/3.png",
+//     title:"CGAD"
+//   },
+//     {
+//       _id:"4",
+//     img:"./image/4.png",
+//     title:"CGAD"
+//   }
+//   ];
 
 
 export default function Vida() {
 
     const { user } = useContext(Context)
+    // const [newStyle, setNewStyle] = useState("showwNew")
     
     // const [countere, setCountere] = useState(1)
 
@@ -90,7 +114,7 @@ export default function Vida() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
