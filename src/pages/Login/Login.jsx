@@ -1,12 +1,16 @@
 
 import './Login.css'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import {useRef, useContext, useState, useEffect} from 'react'
 import {Context} from '../../Context/Context'
 import api from '../../services/api'
 import segundoLogin from '../../services/segundoLogin'
+import GoogleAuth from '../../components/GoogleAuth/GoogleAuth'
 
 export default function Login() {
+
+    const { pathname } = useLocation()
+    console.log(pathname)
 
     const userRef = useRef();
     const passwordRef = useRef();
@@ -38,14 +42,17 @@ export default function Login() {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
             })
-            console.log(res.data)
             if(res.data === true){
                 alert("Usuário não cadastrado!")
                 window.location.replace("/");
             }else{
-                console.log("Usuário Logado!")
                 dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
                 window.location.replace("/");
+                if(pathname === "/login" || pathname === "/"){
+                    window.location.replace("/");
+                }else{
+                    window.location.replace(`${pathname}`);
+                }
             }
         }catch(error){
             setLoading(false)
@@ -67,9 +74,12 @@ export default function Login() {
             const res = await api.post("/usersig/login/", {
                 sigToken: body.data.access_token
             })
-            console.log(res)
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
-            window.location.replace("/");
+            if(pathname === "/login" || pathname === "/"){
+                window.location.replace("/");
+            }else{
+                window.location.replace(`${pathname}`);
+            }
         }catch(err){
             setLoading(false)
             setAlesig(true)
@@ -164,6 +174,7 @@ export default function Login() {
                 </div>
             </form>
             )}
+            <GoogleAuth />
         </div>
     </div>
   )

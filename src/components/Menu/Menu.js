@@ -64,14 +64,15 @@ export default function Menu() {
         </ul>
         <div className='fotoPerfil'>
           {/* <i className="fa-solid fa-user"></i> */}
-              <Link to='/user' >
+              {user?.profilePic && (<Link to='/user' >
                   <Chip
                   id='colorandPoiter'
-                    avatar={<Avatar alt="Natacha" src={user.profilePic} />}
-                    label={user.username}
+                    avatar={<Avatar alt="Natacha" src={user?.profilePic} />}
+                    label={user?.username}
                     variant="outlined"
                   />
               </Link>
+              )}
         </div>
     </div>
   )

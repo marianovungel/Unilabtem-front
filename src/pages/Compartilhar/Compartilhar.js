@@ -66,12 +66,13 @@ export default function Compartilhar() {
                     <li><Link className="dropdown-item" to="/compartilhar-cadastrar">Divulgar Compartilhamento</Link></li>
                 </ul>
                 </li>
-                <li className="nav-item">
+                {user?.profilePic && (<li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user?.profilePic ? (<img src={user?.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
+                )}
             </ul>
             </div>
         </div>

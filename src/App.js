@@ -42,10 +42,10 @@ function App() {
   return (
       <Router>
         <Routes> 
-          <Route path="/" element={ user ? <Vida /> : <Login />} exact />
+          <Route path="/" element={ <Vida /> } exact />
           <Route path="/conf/:id" element={ <ConfirmEmailPage /> } exact />
-          <Route path="/venda" element={ user ? <Venda /> : <Login />} exact />
-          <Route path="/doacao" element={ user ? <Desapego/> : <Login />} exact />
+          <Route path="/venda" element={  <Venda /> } exact />
+          <Route path="/doacao" element={  <Desapego/> } exact />
           {/* esta rota de aluguel é inacessível */}
           <Route path="/exe" element={ user ? <Aluguel /> : <Login />} exact />
           <Route path="/execomp" element={user ? <ExeComp />  : <Login />} exact />
@@ -54,12 +54,12 @@ function App() {
           <Route path="/aluguel-edit/:id" element={ user ? <EditAluguel /> : <Login />} exact />
           <Route path="/compartilhar-edit/:id" element={ user ? <EditCompartilhar /> : <Login />} exact />
           <Route path="/aluguel-cadastrando" element={ user ? <CadastrarAluguel /> : <Login />} exact />
-          <Route path="/habitacao-compartilhar" element={ user ? <Compartilhar /> : <Login />} exact />
+          <Route path="/habitacao-compartilhar" element={ <Compartilhar /> } exact />
           <Route path="/habitacao/compartilhar/:id" element={ user ? <SingleCompartilhar /> : <Login />} exact />
           <Route path="/compartilhar-cadastrar" element={ user ? <CadastrarCompartilhar /> : <Login />} exact />
           <Route path="/post/:id" element={user ? <SingleVenda /> : <Login />} exact />
           <Route path="/doacao/:id" element={user ? <SingleDesapego /> : <Login />} exact />
-          <Route path="/habitacao-aluguel" element={user ? <Exe /> : <Login />} exact />
+          <Route path="/habitacao-aluguel" element={ <Exe /> } exact />
           <Route path="/user" element={user ? <UserPage />  : <Login />} exact />
           <Route path="/login" element={<Login />} exact />
           <Route path="/sendemail" element={<SendEmail />} exact />
