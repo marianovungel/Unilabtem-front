@@ -34,6 +34,7 @@ import PageSingleDoacao from './pages/PageSingleDoacao/PageSingleDoacao';
 import PageSingleEditDoacao from './pages/PageSingleEditDoacao/PageSingleEditDoacao';
 import PageSingleAllguel from './pages/PageSingleAllguel/PageSingleAllguel';
 import PageSingleCompart from './pages/PageSingleCompart/PageSingleCompart';
+import Oportunidade from './pages/Oportunidade/Oportunidade';
 
 function App() {
 
@@ -42,10 +43,11 @@ function App() {
   return (
       <Router>
         <Routes> 
-          <Route path="/" element={ <Vida /> } exact />
+          <Route path="/" element={ user ? <Vida /> : <Login /> } exact />
           <Route path="/conf/:id" element={ <ConfirmEmailPage /> } exact />
           <Route path="/venda" element={  <Venda /> } exact />
           <Route path="/doacao" element={  <Desapego/> } exact />
+          <Route path="/oportunidade" element={  <Oportunidade/> } exact />
           {/* esta rota de aluguel é inacessível */}
           <Route path="/exe" element={ user ? <Aluguel /> : <Login />} exact />
           <Route path="/execomp" element={user ? <ExeComp />  : <Login />} exact />

@@ -3,7 +3,7 @@ import './menu.css'
 import {useContext} from 'react'
 import {Context} from '../../Context/Context'
 import {Link} from 'react-router-dom'
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import { Avatar, Chip } from '@mui/material'
 
 export default function Menu() {
@@ -11,17 +11,17 @@ export default function Menu() {
   const { user } = useContext(Context)
 
 
-  const Producao = ()=>{
-    Swal.fire({
-      title: 'Está em produção e será disponibilizada em breve!',
-      showClass: {
-        popup: 'animate__animated animate__fadeInDown'
-      },
-      hideClass: {
-        popup: 'animate__animated animate__fadeOutUp'
-      }
-    })
-  }
+  // const Producao = ()=>{
+  //   Swal.fire({
+  //     title: 'Está em produção e será disponibilizada em breve!',
+  //     showClass: {
+  //       popup: 'animate__animated animate__fadeInDown'
+  //     },
+  //     hideClass: {
+  //       popup: 'animate__animated animate__fadeOutUp'
+  //     }
+  //   })
+  // }
 
   return (
     <div className="menu">
@@ -46,6 +46,9 @@ export default function Menu() {
                     <Link to='/habitacao-aluguel' className="nav-link" href="#">Habitação</Link>
                     </li>
                     <li className="nav-item">
+                    <Link to='/oportunidade' className="nav-link" href="#">Oportunidades</Link>
+                    </li>
+                    <li className="nav-item">
                     <Link to='/sobre' className="nav-link" href="#">Sobre</Link>
                     </li>
       
@@ -59,7 +62,7 @@ export default function Menu() {
             <Link to='/doacao' id='idManu'><li>Doação</li></Link>
             <Link to='/venda' id='idManu'><li>Venda</li></Link>
             <Link to='/habitacao-aluguel' id='idManu'><li>Habitação</li></Link>
-            <li onClick={Producao}>Oportunidades</li>
+            <Link to='/oportunidade' id='idManu'>Oportunidades</Link>
             <Link to='/sobre' id='idManu'><li>Sobre</li></Link>
         </ul>
         <div className='fotoPerfil'>

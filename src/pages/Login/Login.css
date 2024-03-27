@@ -216,9 +216,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -450px;
     }
     .formLoginLogin{
@@ -267,9 +267,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -630px;
     }
 }
@@ -287,9 +287,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -530px;
     }
 }
@@ -297,9 +297,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -480px;
     }
 }
@@ -307,9 +307,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -380px;
     }
 }
@@ -317,9 +317,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -330px;
     }
 }
@@ -327,9 +327,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -280px;
     }
 }
@@ -337,9 +337,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -230px;
     }
 }
@@ -347,9 +347,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -180px;
     }
 }
@@ -357,9 +357,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -130px;
     }
 }
@@ -367,9 +367,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -80px;
     }
 }
@@ -377,9 +377,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: -10px;
     }
 }
@@ -387,9 +387,9 @@
     .sectionLoginForm{
         width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
         margin-top: 15px;
     }
 }

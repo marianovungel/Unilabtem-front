@@ -15,6 +15,7 @@
     "express": "^4.18.2",
     "firebase": "^10.8.0",
     "hero-slider": "^3.1.0",
+    "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pdf": "^5.7.2",
