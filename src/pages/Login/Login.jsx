@@ -6,12 +6,10 @@ import {Context} from '../../Context/Context'
 import api from '../../services/api'
 import segundoLogin from '../../services/segundoLogin'
 import GoogleAuth from '../../components/GoogleAuth/GoogleAuth'
+import axios from 'axios'
 
 export default function Login() {
-
     const { pathname } = useLocation()
-    console.log(pathname)
-
     const userRef = useRef();
     const passwordRef = useRef();
     const {isFetching, dispatch } = useContext(Context)
@@ -22,15 +20,27 @@ export default function Login() {
     const [sig, setSig] = useState("loginNull")
     const [call, setCall] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [contar, setContar] = useState(0)
     var checkValid = false;
 
+    const ContarLetra = (frase)=>{
+        var contador = 0;
+        for(let i = 0; i < frase.length; i++){
+            if(frase[i] === "/"){
+                contador ++
+            }
+        }
+        setContar(contador)
+    }
+
     useEffect(()=>{
+        ContarLetra(pathname)
         setAle(false)
         setSystem("loginNullSys")
         setSig("loginSig")
         setCall(false)
         setLoading(false)
-    }, [])
+    }, [pathname])
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
@@ -71,9 +81,15 @@ export default function Login() {
                 login: userRef.current.value,
                 senha: passwordRef.current.value,
             })
-            const res = await api.post("/usersig/login/", {
-                sigToken: body.data.access_token
+            const Response = await axios.get('https://api.unilab.edu.br/api/bond', {
+                headers: {authorization: body.data.access_token}
             })
+            const res = await api.post("/usersig", {
+                login:Response.data[0].login,
+                email: Response.data[0].email,
+                sub:Response.data[0].sub
+            })
+            console.log(res.data[0])
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data})
             if(pathname === "/login" || pathname === "/"){
                 window.location.replace("/");
@@ -126,7 +142,9 @@ export default function Login() {
   return (
     <div className="fullContentLogin">
         <div className="logoAndTextLogin">
-            <img src='./image/newLogo.png' alt="" className="imagemLogooiiLogin" />
+            {contar === 1 && (<img src='./image/newLogo.png' alt="" className="imagemLogooiiLogin" />)}
+            {contar === 2 && (<img src='../image/newLogo.png' alt="" className="imagemLogooiiLogin" />)}
+            {contar === 3 && (<img src='../../image/newLogo.png' alt="" className="imagemLogooiiLogin" />)}
             <div className="paragrafoLogoLoginNew">
                 Vem juntar-se à comunidade Unilabtem
                 e terá acesso a produtos e oportunidades
