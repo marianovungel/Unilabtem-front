@@ -43,7 +43,7 @@ function App() {
   return (
       <Router>
         <Routes> 
-          <Route path="/" element={ user ? <Vida /> : <Login /> } exact />
+          <Route path="/" element={ <Vida />  } exact />
           <Route path="/conf/:id" element={ <ConfirmEmailPage /> } exact />
           <Route path="/venda" element={  <Venda /> } exact />
           <Route path="/doacao" element={  <Desapego/> } exact />

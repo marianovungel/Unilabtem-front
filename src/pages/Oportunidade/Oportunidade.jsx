@@ -65,9 +65,9 @@ export default function Oportunidade() {
         </nav>
         </div>
         <div className='Oportunidade'>
-            <div className="imgContentOpor">
+            {/* <div className="imgContentOpor">
                 <div className="containerOport"></div>
-            </div>
+            </div> */}
             <div className="fullnewHeaderOpor">
                 <div className="healfOpor">
                     <div className="leftTextOpor">Upcoming Events</div>
@@ -92,7 +92,41 @@ export default function Oportunidade() {
                         <div className="subOportCard">Subtitulo ou data e horário 10:00 até 15:00</div>
                         <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
                         <div className="tracoOport"></div>
-                        <div className="linkOport">Link --)</div>
+                        <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div className="healfPostOpor">
+                    <div className="dataOport">
+                        <div className='MesOport'>JUN</div>
+                        <div className='MesTracoOport'></div>
+                        <div className='MesOport'>23</div>
+                    </div>
+                    <div className="imgOportPodt">
+                        <img src="./image/uni.png" alt="" className='ImgOportPostItem' />
+                    </div>
+                    <div className="textOpotPost">
+                        <div className="titleOportCard">Título Principal</div>
+                        <div className="subOportCard">Subtitulo ou data e horário 10:00 até 15:00</div>
+                        <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
+                        <div className="tracoOport"></div>
+                        <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </div>
+                <div className="healfPostOpor">
+                    <div className="dataOport">
+                        <div className='MesOport'>JUN</div>
+                        <div className='MesTracoOport'></div>
+                        <div className='MesOport'>23</div>
+                    </div>
+                    <div className="imgOportPodt">
+                        <img src="./image/uni.png" alt="" className='ImgOportPostItem' />
+                    </div>
+                    <div className="textOpotPost">
+                        <div className="titleOportCard">Título Principal</div>
+                        <div className="subOportCard">Subtitulo ou data e horário 10:00 até 15:00</div>
+                        <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
+                        <div className="tracoOport"></div>
+                        <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
