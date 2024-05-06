@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Oportunidade.css'
 import { Link } from 'react-router-dom'
 import {useContext} from 'react'
 import {Context} from '../../Context/Context'
 import Menu from '../../components/Menu/Menu';
 import Footer from '../../components/Footer/Footer'
+import api from '../../services/api'
 
 export default function Oportunidade() {
 
     const { user } = useContext(Context)
+    const [data, setData] = useState([])
+
+    useEffect(()=>{
+        const getData = async () =>{
+            try {
+                const res = await api.get("/oportunidade    ")
+                setData(res.data) 
+            } catch (error) {
+                alert(error.message)
+            }
+        }
+        getData()
+    }, [])
 
     
 
@@ -78,57 +92,26 @@ export default function Oportunidade() {
                 </div>
             </div>
             <div className="fullnewHeaderOpor">
-                <div className="healfPostOpor">
-                    <div className="dataOport">
-                        <div className='MesOport'>JUN</div>
-                        <div className='MesTracoOport'></div>
-                        <div className='MesOport'>23</div>
-                    </div>
-                    <div className="imgOportPodt">
-                        <img src="./image/uni.png" alt="" className='ImgOportPostItem' />
-                    </div>
-                    <div className="textOpotPost">
-                        <div className="titleOportCard">Título Principal</div>
-                        <div className="subOportCard">Subtitulo ou data e horário 10:00 até 15:00</div>
-                        <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
-                        <div className="tracoOport"></div>
-                        <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
-                    </div>
-                </div>
-                <div className="healfPostOpor">
-                    <div className="dataOport">
-                        <div className='MesOport'>JUN</div>
-                        <div className='MesTracoOport'></div>
-                        <div className='MesOport'>23</div>
-                    </div>
-                    <div className="imgOportPodt">
-                        <img src="./image/uni.png" alt="" className='ImgOportPostItem' />
-                    </div>
-                    <div className="textOpotPost">
-                        <div className="titleOportCard">Título Principal</div>
-                        <div className="subOportCard">Subtitulo ou data e horário 10:00 até 15:00</div>
-                        <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
-                        <div className="tracoOport"></div>
-                        <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
-                    </div>
-                </div>
-                <div className="healfPostOpor">
-                    <div className="dataOport">
-                        <div className='MesOport'>JUN</div>
-                        <div className='MesTracoOport'></div>
-                        <div className='MesOport'>23</div>
-                    </div>
-                    <div className="imgOportPodt">
-                        <img src="./image/uni.png" alt="" className='ImgOportPostItem' />
-                    </div>
-                    <div className="textOpotPost">
-                        <div className="titleOportCard">Título Principal</div>
-                        <div className="subOportCard">Subtitulo ou data e horário 10:00 até 15:00</div>
-                        <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
-                        <div className="tracoOport"></div>
-                        <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
-                    </div>
-                </div>
+                {data.map((dt)=>(
+                    <div className="healfPostOpor" key={dt._id}>
+                        <div className="dataOport">
+                            <div className='MesOport'>JUN</div>
+                            <div className='MesTracoOport'></div>
+                            <div className='MesOport'>23</div>
+                        </div>
+                        <div className="imgOportPodt">
+                            <img src={dt.photo} alt="" className='ImgOportPostItem' />
+                        </div>
+                        <div className="textOpotPost">
+                            <div className="titleOportCard">{dt.title}</div>
+                            <div className="subOportCard">{dt.local} {dt.data} {dt.hora}</div>
+                            <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
+                            <div className="tracoOport"></div>
+                            <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                    </div> 
+                )) 
+                }
             </div>
         </div>
         <div className='FooterContainerFix'>
