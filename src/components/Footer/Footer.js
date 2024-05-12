@@ -7,8 +7,8 @@ export default function Footer() {
 
   return (
     <div className="containerfooter">
-        <div className="footer_col">
-            <h2>UNILABTEM</h2>
+        <div className="footer_coll collunDisplay">
+            <h2 className='newH3'>UNILABTEM</h2>
             <p className="footer_para">
                 Vem juntar-se à comunidade Unilabtem
                 e terá acesso a produtos e oportunidades
@@ -16,8 +16,8 @@ export default function Footer() {
                 UnilabTem, Tem de Tudo!
             </p>
         </div>
-        <div className="footer_col">
-            <h3 className="text_office">
+        <div className="footer_col collunDisplay">
+            <h3 className="text_office newH3">
                 Office
                 <div className="underline"><span></span></div>
             </h3>
@@ -29,8 +29,8 @@ export default function Footer() {
                 <p className='linkItemMenuFooter'>+55 85 000 0000</p>
             </ul>
         </div>
-        <div className="footer_col">
-            <h3>
+        <div className="footer_col collunDisplay">
+            <h3 className='newH3'>
                 Menu
                 <div className="underline"><span></span></div>
             </h3>
@@ -44,7 +44,7 @@ export default function Footer() {
             </ul>
         </div>
         <div className="footer_col">
-            <h3>
+            <h3 className='newH3'>
                 Newsletter
                 <div className="underline"><span></span></div>
             </h3>
