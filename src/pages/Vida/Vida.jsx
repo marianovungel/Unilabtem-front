@@ -126,9 +126,7 @@ export default function Vida() {
         </div>
         <div className='vidaContent'>
             <div className="imgContentVida">
-                <h3 className="headerTitleVida">
-                    UnilabTem
-                </h3>
+                {/* <h3 className="headerTitleVida">UnilabTem</h3> */}
                 {/* <img src="./image/fundo3.jpeg" alt="" 
                 className='imgItemVida' /> */}
                 <div className="slider">
@@ -160,10 +158,10 @@ export default function Vida() {
                     </div>
 
                     <div className="navigation-manual">
-                        <label for="radio1" className="manual-btn"></label>
-                        <label for="radio2" className="manual-btn"></label>
-                        <label for="radio3" className="manual-btn"></label>
-                        <label for="radio4" className="manual-btn"></label>
+                        <label htmlFor="radio1" className="manual-btn"></label>
+                        <label htmlFor="radio2" className="manual-btn"></label>
+                        <label htmlFor="radio3" className="manual-btn"></label>
+                        <label htmlFor="radio4" className="manual-btn"></label>
                     </div>
                 </div>
             </div>

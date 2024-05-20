@@ -116,6 +116,7 @@ export default function Monitor() {
                 <div className="doacaoMonitor editMMonitor">Doação 12/3</div>
                 <div className="aluguelMonitor editMMonitor">Aluguel 95/10</div>
                 <div className="compartilhamentoMonitor editMMonitor">Compartilhamento 71/1</div>
+                <div className="compartilhamentoMonitor editMMonitor">Oportunidade</div>
             </div>
             <div className="Painel">
                 {menumonitor && (

@@ -35,6 +35,7 @@ import PageSingleEditDoacao from './pages/PageSingleEditDoacao/PageSingleEditDoa
 import PageSingleAllguel from './pages/PageSingleAllguel/PageSingleAllguel';
 import PageSingleCompart from './pages/PageSingleCompart/PageSingleCompart';
 import Oportunidade from './pages/Oportunidade/Oportunidade';
+import OportMonitor from './pages/OportMonitor/OportMonitor';
 
 function App() {
 
@@ -70,6 +71,7 @@ function App() {
           <Route path="/intercampi" element={<Intercampi />} exact />
           <Route path="/registrar" element={<Registrar />} exact />
           <Route path="/monitor" element={<Monitor />} exact />
+          <Route path="/monitor-oport" element={<OportMonitor />} exact />
           <Route path="/monitor-venda/:id" element={<PageSingVenda />} exact />
           <Route path="/monitor-aluguel/:id" element={<PageSingleAllguel />} exact />
           <Route path="/monitor-compartilhar/:id" element={<PageSingleCompart />} exact />

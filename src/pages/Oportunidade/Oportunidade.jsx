@@ -12,15 +12,20 @@ export default function Oportunidade() {
     const { user } = useContext(Context)
     const [data, setData] = useState([])
 
+    const OpenLink = (URL)=>{
+        window.open(`${URL}`)
+    }
+
     useEffect(()=>{
         const getData = async () =>{
             try {
-                const res = await api.get("/oportunidade    ")
-                setData(res.data) 
+                const res = await api.get("/oportunidade")
+                setData(res.data)
             } catch (error) {
                 alert(error.message)
             }
         }
+        
         getData()
     }, [])
 
@@ -95,9 +100,9 @@ export default function Oportunidade() {
                 {data.map((dt)=>(
                     <div className="healfPostOpor" key={dt._id}>
                         <div className="dataOport">
-                            <div className='MesOport'>JUN</div>
+                            <div className='MesOport'>{new Date(dt.createdAt).getDate().toString().padStart(2, "0")}</div>
                             <div className='MesTracoOport'></div>
-                            <div className='MesOport'>23</div>
+                            <div className='MesOport'>{(new Date(dt.createdAt).getMonth() + 1).toString().padStart(2, "0")}</div>
                         </div>
                         <div className="imgOportPodt">
                             <img src={dt.photo} alt="" className='ImgOportPostItem' />
@@ -105,9 +110,9 @@ export default function Oportunidade() {
                         <div className="textOpotPost">
                             <div className="titleOportCard">{dt.title}</div>
                             <div className="subOportCard">{dt.local} {dt.data} {dt.hora}</div>
-                            <div className="paragrafOportCard">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sint explicabo laudantium repudiandae recusandae, dignissimos aliquam, sed optio alias quidem autem! Pariatur laborum sed non ipsum expedita dolorem, distinctio voluptatem!</div>
+                            <div className="paragrafOportCard">{dt.desc}</div>
                             <div className="tracoOport"></div>
-                            <div className="linkOport">Acessar o Link <i class="fa-solid fa-arrow-right"></i></div>
+                            <div className="linkOport" onClick={()=>OpenLink(dt.link)}>Acessar o Link <i className="fa-solid fa-arrow-right"></i></div>
                         </div>
                     </div> 
                 )) 

@@ -128,3 +128,29 @@
     bottom: 0px;
     left: 0px;
 }
+@media (max-width: 940px){
+    .tracoOport{
+        display: none;
+    }
+    .linkOport{
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+}
+@media (max-width: 810px){
+    .healfPostOpor{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .dataOport{
+        display: none;
+    }
+    .textOpotPost{
+        width: 100%;
+    }
+    .linkOport{
+        position: relative;
+    }
+}
