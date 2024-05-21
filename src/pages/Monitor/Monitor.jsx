@@ -10,6 +10,7 @@ import DoacaoEditMonitor from '../../components/DoacaoEditMonitor/DoacaoEditMoni
 import AluguelPost from '../../components/AluguelPost/AluguelPost'
 import CompartPost from '../../components/CompartPost/CompartPost'
 import AluguelEditMonitor from '../../components/AluguelEditMonitor/AluguelEditMonitor'
+import OportMonitor from '../../components/OportMonitor/OportMonitor'
 
 export default function Monitor() {
     const [menumonitor, setMenumonitor] = useState(true)
@@ -20,6 +21,7 @@ export default function Monitor() {
     const [postdoacao, setPostdoacao] = useState(false)
     const [editpostdoacao, setEditpostdoacao] = useState(false)
     const [editpostaluguel, setEditpostaluguel] = useState(false)
+    const [oport, setOport] = useState(false)
     const [vendapn, setVendapn] = useState(0)
 
 
@@ -30,10 +32,12 @@ export default function Monitor() {
         setPostvendam(false)
         setPostaluguel(false)
         setPostcompart(false)
+        setOport(false)
         setEditpostaluguel(true)
     }
     const setCompartt = ()=>{
         setMenumonitor(false)
+        setOport(false)
         setPostdoacao(false)
         setEditpostdoacao(false)
         setPostvendam(false)
@@ -43,6 +47,7 @@ export default function Monitor() {
     }
     const setAlluguel = ()=>{
         setEditpostaluguel(false)
+        setOport(false)
         setMenumonitor(false)
         setPostdoacao(false)
         setEditpostdoacao(false)
@@ -52,6 +57,7 @@ export default function Monitor() {
     }
     const setVenda = ()=>{
         setEditpostaluguel(false)
+        setOport(false)
         setMenumonitor(false)
         setPostdoacao(false)
         setEditpostdoacao(false)
@@ -61,6 +67,7 @@ export default function Monitor() {
     }
     const setEdVenda = ()=>{
         setEditpostaluguel(false)
+        setOport(false)
         setMenumonitor(false)
         setEditpostdoacao(false)
         setPostdoacao(false)
@@ -71,6 +78,7 @@ export default function Monitor() {
     }
     const setDoacao = ()=>{
         setEditpostaluguel(false)
+        setOport(false)
         setMenumonitor(false)
         setEditpostdoacao(false)
         setPostdoacao(true)
@@ -81,9 +89,21 @@ export default function Monitor() {
     }
     const setEditDoacao = ()=>{
         setEditpostaluguel(false)
+        setOport(false)
         setMenumonitor(false)
         setPostcompart(false)
         setEditpostdoacao(true)
+        setPostdoacao(false)
+        setPostvendam(false)
+        setEdvenda(false)
+        setPostaluguel(false)
+    }
+    const setOportt = ()=>{
+        setEditpostaluguel(false)
+        setOport(true)
+        setMenumonitor(false)
+        setPostcompart(false)
+        setEditpostdoacao(false)
         setPostdoacao(false)
         setPostvendam(false)
         setEdvenda(false)
@@ -112,11 +132,11 @@ export default function Monitor() {
         <div className="MenuLateralAndPainel">
             <div className="MenuLateral">
                 <div className="menuMM">Número de Pedidos</div>
-                <div className="vendaMonitor editMMonitor">Venda {vendapn}/4</div>
-                <div className="doacaoMonitor editMMonitor">Doação 12/3</div>
-                <div className="aluguelMonitor editMMonitor">Aluguel 95/10</div>
-                <div className="compartilhamentoMonitor editMMonitor">Compartilhamento 71/1</div>
-                <div className="compartilhamentoMonitor editMMonitor">Oportunidade</div>
+                <div className="vendaMonitor editMMonitor">Venda {vendapn}</div>
+                <div className="doacaoMonitor editMMonitor">Doação 0</div>
+                <div className="aluguelMonitor editMMonitor">Aluguel 0</div>
+                <div className="compartilhamentoMonitor editMMonitor">Compartilhamento 0</div>
+                <div className="compartilhamentoMonitor editMMonitor" onClick={setOportt}>Oportunidade</div>
             </div>
             <div className="Painel">
                 {menumonitor && (
@@ -196,6 +216,7 @@ export default function Monitor() {
                 {postaluguel && (<AluguelPost />)}
                 {postcompart && (<CompartPost />)}
                 {editpostaluguel && (<AluguelEditMonitor />)}
+                {oport && (<OportMonitor />)}
                 
             </div>
         </div>

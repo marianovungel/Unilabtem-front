@@ -20,7 +20,8 @@ export default function Oportunidade() {
         const getData = async () =>{
             try {
                 const res = await api.get("/oportunidade")
-                setData(res.data)
+                const resposta = res.data.reverse()
+                setData(resposta)
             } catch (error) {
                 alert(error.message)
             }

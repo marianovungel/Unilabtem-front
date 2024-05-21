@@ -78,7 +78,7 @@ export default function Produto() {
               </div>
               <div className="descritionAluguelSetionw">
                   {/* <i className="aluguelI">{p.cep.localidade}</i> */}
-                  <h3 className="hpraceAluguel">{p.title}</h3>
+                  <h3 className="hpraceAluguelUltemate">{p.title}</h3>
                   <div className='CardVendaNewWay'>
                     <p className="pdescriçãoAluguel">R${p.preco},00</p>
                     <i className='AvendaColor'>A venda</i>

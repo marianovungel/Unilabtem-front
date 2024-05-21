@@ -55,9 +55,11 @@ function Venda() {
   const [banner, setBanner] = useState(true)
   const [file, setFile] = useState(null)
   const [girar, setGirar] = useState(false)
+  const [imgPopap, setImgPopap] = useState(null)
   
 
   const { user } = useContext(Context)
+  console.log(user)
 //upload img function
 
   const handleSubmit = async (e)=>{
@@ -76,18 +78,20 @@ function Venda() {
         const description = Date.now() + file.name;
         const result = await postImage({image: file, description})
         newPost.photo = result;
-        console.log(newPost)
+        setImgPopap(result)
       }catch(err){}
     }
     try{
       await api.post("/produto", newPost)
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1300
-      })
+        title: "Produto Cadastrado Com Sucesso!",
+        text: "O Seu Produto Foi Enviado Para Análise Em até 2 Horas",
+        imageUrl: `${imgPopap}`,
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image"
+      });
+
       setCadastrarFunc(false)
       setGirar(false)
       setBanner(true)
@@ -96,13 +100,17 @@ function Venda() {
   }
 
   const Ative = ()=>{
-    if(banner && !cadastrarFunc){
-      setCadastrarFunc(true)
-      setGirar(false)
-      setBanner(false)
+    if(user){
+      if(banner && !cadastrarFunc){
+        setCadastrarFunc(true)
+        setGirar(false)
+        setBanner(false)
+      }else{
+        setCadastrarFunc(false)
+        setBanner(true)
+      }
     }else{
-      setCadastrarFunc(false)
-      setBanner(true)
+      window.location.replace("/login")
     }
   }
   const TodosPro = ()=>{
