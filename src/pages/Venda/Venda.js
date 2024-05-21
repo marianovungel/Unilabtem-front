@@ -55,11 +55,10 @@ function Venda() {
   const [banner, setBanner] = useState(true)
   const [file, setFile] = useState(null)
   const [girar, setGirar] = useState(false)
-  const [imgPopap, setImgPopap] = useState(null)
+  
   
 
   const { user } = useContext(Context)
-  console.log(user)
 //upload img function
 
   const handleSubmit = async (e)=>{
@@ -73,12 +72,13 @@ function Venda() {
       title: title.toLowerCase(),
       desc,
     };
+    var imgPopap = ""
     if(file){
       try{
         const description = Date.now() + file.name;
         const result = await postImage({image: file, description})
         newPost.photo = result;
-        setImgPopap(result)
+        imgPopap = result
       }catch(err){}
     }
     try{
@@ -92,10 +92,13 @@ function Venda() {
         imageAlt: "Custom image"
       });
 
-      setCadastrarFunc(false)
-      setGirar(false)
-      setBanner(true)
-      window.location.replace("/venda");
+      setTimeout(() => {
+        setCadastrarFunc(false)
+        setGirar(false)
+        setBanner(true)
+        window.location.replace("/venda");
+      }, 3000);
+
     }catch(err){}
   }
 
