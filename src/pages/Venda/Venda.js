@@ -97,7 +97,7 @@ function Venda() {
         setGirar(false)
         setBanner(true)
         window.location.replace("/venda");
-      }, 3000);
+      }, 6000);
 
     }catch(err){}
   }
