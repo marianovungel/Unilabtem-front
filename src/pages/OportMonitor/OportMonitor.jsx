@@ -20,6 +20,7 @@ export default function OportMonitor() {
                 setVendapn(product.data.length)
             }catch(err){}
         }
+        setMenumonitor(true)
         calcularVenda()
     }, [])
 
