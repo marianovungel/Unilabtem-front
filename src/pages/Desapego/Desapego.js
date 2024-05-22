@@ -117,8 +117,8 @@ export default function Desapego() {
       setCadastrar(true)
       
       Swal.fire({
-        title: "Produto Cadastrado Com Sucesso!",
-        text: "O Seu Produto Foi Enviado Para Análise Em até 2 Horas",
+        title: "Doação Cadastrada Com Sucesso!",
+        text: "A sua Doação Foi Enviado Para Análise Em até 2 Horas",
         imageUrl: `${imgPopap}`,
         imageWidth: 400,
         imageHeight: 200,
