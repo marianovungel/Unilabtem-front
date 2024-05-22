@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import { imageDb } from '../../services/firebase';
 import { v4 } from 'uuid';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import Swal from 'sweetalert2'
 
 const handleClick = async (URL)=>{
     try {
@@ -77,12 +78,13 @@ export default function CadastrarAluguel() {
           area,
 
         };
+        var imgPopap = ""
         if(file1){
           try{
             const description = Date.now() + file1.name;
             const result = await postImage({image: file1, description})
             newPost.photo1 = result
-            
+            imgPopap = result
             
           }catch(err){}
         }
@@ -125,6 +127,25 @@ export default function CadastrarAluguel() {
         try{
           if(file1 !== null || file2 !== null || file3 !== null || file4 !== null || file5 !== null){
             await api.post("/aluguel", newPost);
+
+            Swal.fire({
+              title: "Aluguel Cadastrada Com Sucesso!",
+              text: "A sua casa em Aluguel Foi Enviado Para Análise Em até 2 Horas",
+              imageUrl: `${imgPopap}`,
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: "Custom image"
+            });
+      
+            const Mariano = "vungemariano@gmail.com"
+            const pageName = "Aluguel"
+            await api.post("/auth/router/emailanalise", {
+              to: Mariano,
+              codigo: pageName,
+              from:"unilabtem@gmail.com",
+            })
+
+
             setAlertImg(false)
             window.location.replace("/habitacao-aluguel");
           }else{
