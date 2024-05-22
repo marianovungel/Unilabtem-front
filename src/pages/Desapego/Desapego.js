@@ -101,32 +101,46 @@ export default function Desapego() {
       cidade: cep.localidade,
       categories: cat,
     };
+
+    var imgPopap = ""
     if(file){
       try{
         const description = Date.now() + file.name;
         const result = await postImage({image: file, description})
-        console.log(result)
+        imgPopap = result
         newPost.photo = result;
-        
-        
       }catch(err){}
     }
     try{
       const {data: ress} =  await api.post("/desapego", newPost);
       setDesapego([ress, ...desapego])
       setCadastrar(true)
+      
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1300
+        title: "Produto Cadastrado Com Sucesso!",
+        text: "O Seu Produto Foi Enviado Para Análise Em até 2 Horas",
+        imageUrl: `${imgPopap}`,
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image"
+      });
+
+      const Mariano = "vungemariano@gmail.com"
+      const pageName = "Doação"
+      await api.post("/auth/router/emailanalise", {
+        to: Mariano,
+        codigo: pageName,
+        from:"unilabtem@gmail.com",
       })
-      setGirar(false)
-      window.location.reload('/desapego');
-      setScroll(true)
+
+      setTimeout(() => {
+        window.location.reload('/desapego');
+        setGirar(false)
+        setScroll(true)
         setSide(true)
         setCadastrar(true)
+
+      }, 7000);
     }catch(err){}
   }
 ///////////////--cadastrar--////////////

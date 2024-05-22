@@ -94,20 +94,19 @@ function Venda() {
 
       const Mariano = "vungemariano@gmail.com"
       const pageName = "Produto à Venda"
-      const codigoRequest = await api.post("/auth/router/emailanalise", {
+      await api.post("/auth/router/emailanalise", {
         to: Mariano,
         codigo: pageName,
         from:"unilabtem@gmail.com",
-    })
+      })
 
-    console.log(codigoRequest)
 
       setTimeout(() => {
         setCadastrarFunc(false)
         setGirar(false)
         setBanner(true)
         window.location.replace("/venda");
-      }, 8000);
+      }, 7000);
 
     }catch(err){}
   }
