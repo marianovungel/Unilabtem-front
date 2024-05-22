@@ -26,7 +26,6 @@ export default function Footer() {
                 <p className='linkItemMenuFooter'>@unilatem</p>
                 <p className='linkItemMenuFooter'>unilabtem@gmail.com</p>
                 <p className='linkItemMenuFooter'>Engenharia na sociedade</p>
-                <p className='linkItemMenuFooter'>+55 85 000 0000</p>
             </ul>
         </div>
         <div className="footer_col collunDisplay">
