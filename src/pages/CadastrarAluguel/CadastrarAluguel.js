@@ -145,9 +145,10 @@ export default function CadastrarAluguel() {
               from:"unilabtem@gmail.com",
             })
 
-
-            setAlertImg(false)
-            window.location.replace("/habitacao-aluguel");
+            setTimeout(() => {
+              setAlertImg(false)
+              window.location.replace("/habitacao-aluguel");
+            }, 7000);
           }else{
             setAlertImg(true)
           }

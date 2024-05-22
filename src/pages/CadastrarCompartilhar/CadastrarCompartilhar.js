@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import { imageDb } from '../../services/firebase';
 import { v4 } from 'uuid';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import Swal from 'sweetalert2'
 
 const handleClick = async (URL)=>{
     try {
@@ -81,12 +82,15 @@ export default function CadastrarCompartilhar() {
           moradores: moradores,
 
         };
+
+        var imgPopap = ""
         
         if(file1){
           try{
             const description = Date.now() + file1.name;
             const result = await postImage({image: file1, description})
             newPost.photo1 = result;
+            imgPopap = result;
           }catch(err){}
         }
         if(file2){
@@ -118,12 +122,30 @@ export default function CadastrarCompartilhar() {
             }catch(err){}
           }
         try{
+          
+            await api.post("/compartilhar", newPost);
 
-          console.log(newPost)
-            const respostaa = await api.post("/compartilhar", newPost);
-            console.log(respostaa)
-            SetAddPhoto(false)
-            // window.location.replace("/habitacao-compartilhar");
+            Swal.fire({
+              title: "Aluguel Cadastrada Com Sucesso!",
+              text: "A sua casa em Aluguel Foi Enviado Para Análise Em até 2 Horas",
+              imageUrl: `${imgPopap}`,
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: "Custom image"
+            });
+      
+            const Mariano = "vungemariano@gmail.com"
+            const pageName = "Casa a ser Compartilhada"
+            await api.post("/auth/router/emailanalise", {
+              to: Mariano,
+              codigo: pageName,
+              from:"unilabtem@gmail.com",
+            })
+
+            setTimeout(() => {
+              SetAddPhoto(false)
+              window.location.replace("/habitacao-compartilhar");
+            }, 7000);
         }catch(err){}
       }
 
