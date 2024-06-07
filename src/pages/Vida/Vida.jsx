@@ -63,13 +63,14 @@ export default function Vida() {
         window.open("https://unilab.edu.br/biblioteca-universitaria-unilab/")
     }
     const Curso =()=>{
-        window.open("https://unilab.edu.br/cursos-de-graduacao/")
+        // window.open("https://unilab.edu.br/cursos-de-graduacao/")
+        window.location.replace("/oportunidade")
     }
     const RNE =()=>{
         window.open("https://www.tirarrne.com.br/artigos/como-renovar-rne-permanente-vencido/")
     }
     const Cplp =()=>{
-        window.open("https://unilab.edu.br/paises-parceiros/#:~:text=Tem%20mais%20de%2030%20milh%C3%B5es,s%C3%A9timo%20da%20popula%C3%A7%C3%A3o%20do%20mundo.")
+        window.open("https://www.documentodoestudante.com.br/lp/carteira-de-estudante-ads/?gad_source=1&gclid=CjwKCAjwvIWzBhAlEiwAHHWgvaZqg-G2PkCsjobMbyoGQdMfnqR8cRQV2n07oHXxDHRNTHnsigyCnRoCuvgQAvD_BwE")
     }
 
   return (
@@ -226,28 +227,22 @@ export default function Vida() {
                         </div>
                     </div>
                     <div className="serviceItem">
-                        <h6 className="serviceTitle"><i className="fa-solid fa-graduation-cap"></i> Cursos de Graduação Unilab</h6>
+                        <h6 className="serviceTitle"><i className="fa-solid fa-briefcase"></i> Oportunidades</h6>
                         <p className="serviceParagrafo">
-                            Na unilab, tem diversos cursos no formato Presencial
-                            e de diversas áreas do saber, que são administrados nos 
-                            campis do Males (Bhaia), nos campis das Auroras e Palmares (Ceará).
+                            Nesta página a nossa plataforma conta com as atualizações de cursos
+                             e conferências que estão a ser oferecidos no estado do Ceará e em outros entados do Brasil.
                         </p>
                         <i className="serviceLink" onClick={Curso}>Saiba mais...</i>
                     </div>
                     <div className="serviceItem">
-                        <h6 className="serviceTitle"><i className="fa-solid fa-flag"></i> CPLP</h6>
+                        <h6 className="serviceTitle"><i className="fa-solid fa-address-card"></i> Carterinha de Estudante</h6>
                         <p className="serviceParagrafo">
-                        Um dos propósitos da Unilab é formar 
-                        pessoas aptas para contribuir com a 
-                        integração do Brasil com os países membros
-                        da Comunidade dos Países de Língua Portuguesa
-                        (CPLP), para o desenvolvimento regional, 
-                        científico e educacional, assim como para o
-                        intercâmbio cultural. Esta integração se realizará 
-                        pela composição de corpo docente e discente proveniente
-                        não só das várias regiões do Brasil, mas também de outros
-                        países e do estabelecimento e execução de convênios 
-                        temporários ou permanentes com outras instituições da CPLP.
+                        Estudantes dos cursos de ensino presencial ou do ensino a 
+                        distância(EAD), podem solicitar o Documento do Estudante 
+                        para garantir meia-entrada no ingresso de shows, eventos e cinemas. 
+                        Basta estar regularmente matriculado em
+                        uma destas modalidades de ensino:Infantil, Fundamental, Médio e Técnico,
+                        Cursos de graduação, Especialização, Mestrado e Doutorado.
                         </p>
                         <i className="serviceLink" onClick={Cplp}>Saiba mais...</i>
                     </div>
