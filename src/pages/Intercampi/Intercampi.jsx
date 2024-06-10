@@ -6,7 +6,7 @@ import {Context} from '../../Context/Context'
 import { useEffect } from 'react'
 import { useState } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
-const URLImg = "https://festupload.s3.amazonaws.com/";
+// const URLImg = "https://festupload.s3.amazonaws.com/";
 
 export default function Ru() {
 
@@ -88,7 +88,7 @@ export default function Ru() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link text-light" to="/user">
-                        {user.profilePic ? (<img src={URLImg+user.profilePic} alt="" className='imgMenuHumburguer' />):
+                        {user?.profilePic ? (<img src={user?.profilePic} alt="" className='imgMenuHumburguer' />):
                         (<i>Usuário</i>)}
                     </Link>
                 </li>
