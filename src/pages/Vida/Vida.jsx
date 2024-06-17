@@ -170,7 +170,7 @@ export default function Vida() {
                 <h4 className="serviceTitleVida">Serviços</h4>
                 <section className='sectionService'>
                     <div className="serviceItem">
-                        <h6 className="serviceTitle"><i className="fa-solid fa-book"></i> Carterinha</h6>
+                        <h6 className="serviceTitle"><i className="fa-solid fa-book"></i> Carteirinha</h6>
                         <p className="serviceParagrafo">
                         Estudantes dos cursos de ensino presencial ou do ensino a 
                         distância(EAD), podem solicitar o Documento do Estudante para 
