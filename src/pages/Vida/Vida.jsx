@@ -60,7 +60,7 @@ export default function Vida() {
         window.open("https://play.google.com/store/apps/details?id=com.edesonabizerril.newintercampi&hl=pt_BR&gl=US")
     }
     const Biblioteca =()=>{
-        window.open("https://unilab.edu.br/biblioteca-universitaria-unilab/")
+        window.open("https://www.documentodoestudante.com.br/lp/carteirinha-de-estudante-nacional-ads/?gad_source=1&gclid=EAIaIQobChMI3ZuRqIfjhgMVu1ZIAB2hIgZWEAAYASAAEgLeRPD_BwE")
     }
     const Curso =()=>{
         // window.open("https://unilab.edu.br/cursos-de-graduacao/")
@@ -170,15 +170,14 @@ export default function Vida() {
                 <h4 className="serviceTitleVida">Serviços</h4>
                 <section className='sectionService'>
                     <div className="serviceItem">
-                        <h6 className="serviceTitle"><i className="fa-solid fa-book"></i> Biblioteca</h6>
+                        <h6 className="serviceTitle"><i className="fa-solid fa-book"></i> Carterinha</h6>
                         <p className="serviceParagrafo">
-                        O Sistema de Bibliotecas da Unilab (Sibiuni) 
-                        é um órgão suplementar da Unilab criado conforme
-                        artigo 101 do estatuto da Unilab. O Sibiuni é responsável
-                         pelo funcionamento sistêmico das bibliotecas da Unilab, 
-                        a fim de oferecer suporte ao desenvolvimento da pesquisa, 
-                        do ensino e da extensão. O Sibiuni é composto por uma estrutura 
-                        administrativa e 3 bibliotecas Setoriais.
+                        Estudantes dos cursos de ensino presencial ou do ensino a 
+                        distância(EAD), podem solicitar o Documento do Estudante para 
+                        garantir meia-entrada no ingresso de shows, eventos e cinemas. 
+                        Basta estar regularmente matriculado em uma destas modalidades de ensino:Infantil, 
+                        Fundamental, Médio e Técnico, Cursos de graduação, 
+                        Especialização, Mestrado e Doutorado.
                         </p>
                         <i className="serviceLink" onClick={Biblioteca}>Saiba mais...</i>
                     </div>
